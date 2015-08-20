@@ -1,0 +1,18 @@
+header {
+	height: $headerBarHeight;
+	background-color: $bodyTextColor;
+	padding: 15px 100px;
+
+	.nav-items {
+		float: right;
+	}
+
+	.logo {
+		@include sprite($logo);
+		float: left;
+	}
+
+	.new-message {
+		@include sprite($new-message);
+	}
+}

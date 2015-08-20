@@ -1,0 +1,14 @@
+@import "vendor/_normalize";
+@import "vendor/_skeleton";
+@import "_variables";
+@import "_sprites";
+@import "_header";
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+	background-color: $secondaryLinkColor;
+	color: $bodyTextColor;
+}
