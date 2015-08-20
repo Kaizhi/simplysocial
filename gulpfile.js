@@ -21,6 +21,11 @@ gulp.task('sprites', function () {
     style: '_sprites.scss',
     cssPath: '../img/',
     processor: 'sass',
+    'dimension': [{
+      ratio: 1, dpi: 72
+    }, {
+      ratio: 2, dpi: 192
+    }],
   })
   .pipe(gulpif('*.png', gulp.dest('public/img/'), gulp.dest('scss/')));
 });

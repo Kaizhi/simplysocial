@@ -698,6 +698,11 @@ there.
 .icon {
   background-image: url("../img/sprite.png"); }
 
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .icon {
+    background-image: url("../img/sprite@2x.png");
+    background-size: 141px 59px; } }
+
 header {
   height: 60px;
   background-color: #262728;
@@ -709,16 +714,16 @@ header {
     background-repeat: no-repeat;
     overflow: hidden;
     display: block;
-    width: 145px;
-    height: 33px;
+    width: 141px;
+    height: 29px;
     float: left; }
   header .new-message {
-    background-position: 0px -33px;
+    background-position: 0px -29px;
     background-repeat: no-repeat;
     overflow: hidden;
     display: block;
-    width: 39px;
-    height: 34px; }
+    width: 35px;
+    height: 30px; }
 
 * {
   box-sizing: border-box; }

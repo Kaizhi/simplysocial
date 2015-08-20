@@ -1,5 +1,5 @@
-$logo: -0px -0px 145px 33px;
-$new-message: -0px -33px 39px 34px;
+$logo: -0px -0px 141px 29px;
+$new-message: -0px -29px 35px 30px;
 
 @mixin sprite-width($sprite) {
   width: nth($sprite, 3);
@@ -34,4 +34,12 @@ $new-message: -0px -33px 39px 34px;
 
 .icon {
   background-image: url("../img/sprite.png");
+}
+
+@media (-webkit-min-device-pixel-ratio: 2),
+(min-resolution: 192dpi) {
+  .icon {
+    background-image: url("../img/sprite@2x.png");
+    background-size: 141px 59px;
+  }
 }
