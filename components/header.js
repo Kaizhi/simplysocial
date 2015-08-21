@@ -32,7 +32,6 @@ var Header = React.createClass({
 
 		return (
 			<header>
-				<div className="container">
 				<Link to="/"><div className="icon logo"></div></Link>
 
 				<div className="nav-items">
@@ -54,7 +53,6 @@ var Header = React.createClass({
 							<li><Link to="settings">Settings</Link></li>
 						</ul>
 					</div>
-				</div>
 				</div>
 			</header>
 		);

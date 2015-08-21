@@ -11,7 +11,6 @@
 		height: 155px;
 		margin: 0 auto;
 		background-color: rgba(0, 204, 153, 0.7);
-		opacity: 0.7;
 		border-radius: 3px;
 		padding: 30px;
 
@@ -25,7 +24,7 @@
 			font-weight: lighter;
 			width: 100%;
 
-			@include placeholder(white, light);
+			@include placeholder(rgba(255,255,255,0.7), light);
 		}
 
 		.actions {
@@ -35,6 +34,13 @@
 
 			a {
 				margin-right: 45px;
+				color: rgba(255,255,255,0.7);
+				text-decoration: none;
+
+				&:hover {
+					text-decoration: none;
+					color: white;
+				}
 
 				&:last-of-type {
 					margin-right: 0px;

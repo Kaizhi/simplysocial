@@ -3,26 +3,21 @@
 @import "_mixins";
 @import "_variables";
 @import "_sprites";
-@import "_header";
-// Page styles
-@import "_home";
 
 * {
 	font-family: 'Open Sans', sans-serif;
  	box-sizing: border-box;
 }
 
-a {
-	color: white;
-	text-decoration: none;
-
-	&:hover {
-		text-decoration: none;
-		color: white;
-	}
-}
-
 body {
 	background-color: white;
 	color: $bodyTextColor;
 }
+
+.container {
+	max-width: 1175px;
+}
+
+// Page styles
+@import "_header";
+@import "_home";

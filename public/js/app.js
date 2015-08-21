@@ -73,7 +73,6 @@ var Header = React.createClass({
 
 		return (
 			React.createElement("header", null, 
-				React.createElement("div", {className: "container"}, 
 				React.createElement(Link, {to: "/"}, React.createElement("div", {className: "icon logo"})), 
 
 				React.createElement("div", {className: "nav-items"}, 
@@ -95,7 +94,6 @@ var Header = React.createClass({
 							React.createElement("li", null, React.createElement(Link, {to: "settings"}, "Settings"))
 						)
 					)
-				)
 				)
 			)
 		);

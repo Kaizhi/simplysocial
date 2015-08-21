@@ -702,10 +702,21 @@ there.
     background-image: url("../img/sprite@2x.png");
     background-size: 141px 121px; } }
 
+* {
+  font-family: 'Open Sans', sans-serif;
+  box-sizing: border-box; }
+
+body {
+  background-color: white;
+  color: #262728; }
+
+.container {
+  max-width: 1175px; }
+
 header {
   height: 60px;
   background-color: #262728;
-  padding: 15px 0;
+  padding: 15px 5%;
   /* Search bar */
   /* avatar */ }
   header .nav-items {
@@ -818,7 +829,6 @@ header {
     height: 155px;
     margin: 0 auto;
     background-color: rgba(0, 204, 153, 0.7);
-    opacity: 0.7;
     border-radius: 3px;
     padding: 30px; }
     .hero .new-message-box > input {
@@ -831,25 +841,30 @@ header {
       font-weight: lighter;
       width: 100%; }
       .hero .new-message-box > input::-webkit-input-placeholder {
-        color: white;
+        color: rgba(255, 255, 255, 0.7);
         font-weight: light; }
       .hero .new-message-box > input:-moz-placeholder {
         /* Firefox 18- */
-        color: white;
+        color: rgba(255, 255, 255, 0.7);
         font-weight: light; }
       .hero .new-message-box > input::-moz-placeholder {
         /* Firefox 19+ */
-        color: white;
+        color: rgba(255, 255, 255, 0.7);
         font-weight: light; }
       .hero .new-message-box > input:-ms-input-placeholder {
-        color: white;
+        color: rgba(255, 255, 255, 0.7);
         font-weight: light; }
     .hero .new-message-box .actions {
       position: absolute;
       bottom: 30px;
       height: 20px; }
       .hero .new-message-box .actions a {
-        margin-right: 45px; }
+        margin-right: 45px;
+        color: rgba(255, 255, 255, 0.7);
+        text-decoration: none; }
+        .hero .new-message-box .actions a:hover {
+          text-decoration: none;
+          color: white; }
         .hero .new-message-box .actions a:last-of-type {
           margin-right: 0px; }
       .hero .new-message-box .actions .add-photo {
@@ -870,18 +885,3 @@ header {
         margin-right: 10px; }
       .hero .new-message-box .actions .label {
         vertical-align: text-bottom; }
-
-* {
-  font-family: 'Open Sans', sans-serif;
-  box-sizing: border-box; }
-
-a {
-  color: white;
-  text-decoration: none; }
-  a:hover {
-    text-decoration: none;
-    color: white; }
-
-body {
-  background-color: white;
-  color: #262728; }
