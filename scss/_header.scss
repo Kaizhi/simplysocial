@@ -1,3 +1,5 @@
+$navItemMargin: 24px;
+
 header {
 	height: $headerBarHeight;
 	background-color: $bodyTextColor;
@@ -14,5 +16,104 @@ header {
 
 	.new-message {
 		@include sprite($new-message);
+		float: left;
+		margin-right: $navItemMargin;
+		cursor: pointer;
 	}
+
+	/* Search bar */
+	.search {
+		position: relative;
+		width: 200px;
+		height: 30px;
+		margin-right: $navItemMargin;
+		float: left;
+
+		.search-icon {
+			@include sprite($magnifying-glass);
+			right: 10px;
+			top: 5px;
+			position: absolute;
+			opacity: 0.4;
+		}
+
+		input {
+			width: 200px;
+			height: 30px;
+			background-color: $bodyTextColor;
+			border: 1px solid $outlineGrey;
+			color: white;
+			padding-right: 35px;
+
+			&:focus {
+				border: 1px solid $secondaryLinkColor;
+			}
+		}
+	}
+
+	/* avatar */
+	.avatar {
+		height: 30px;
+		cursor: pointer;
+		float: left;
+		position: relative;
+
+		.avatar-image {
+			width: 30px;
+			height: 30px;
+			border-radius: 5px;
+			background-image: url('../img/avatar.jpg');
+			float: left;
+			margin-right: 10px;
+		}
+
+		.down-arrow {
+			@include sprite($down-arrow);
+			float: left;
+			margin-top: 10px;
+		}
+
+		.dropdown {
+			list-style-type: none;
+			background-color: $dropdownBackgroundColor;
+			border-radius: 3px;
+			position: absolute;
+			top: 40px;
+			left: -27px;
+			opacity: 0;
+
+			&::before {
+				content: '';
+				position: absolute;
+				top: -7px;
+				right: 15px;
+				width: 0;
+				height: 0;
+				border-left: 7px solid transparent;
+				border-right: 7px solid transparent;
+				border-bottom: 7px solid $dropdownBackgroundColor;
+			}
+
+			li {
+				border-bottom: 2px solid $dropdownDividerColor;
+				color: $dropdownTextColor;
+				padding: 10px 15px;
+				margin: 0;
+
+				&:last-of-type {
+					border-bottom: 0;
+				}
+
+				a {
+					text-decoration: none;
+					color: $dropdownTextColor;
+				}
+			}
+
+			&.active {
+				opacity: 1;
+			}
+		}
+	}
+
 }

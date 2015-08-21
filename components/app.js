@@ -5,12 +5,13 @@
 		DefaultRoute = Router.DefaultRoute;
 
 	// Components
-	var Home = require( './home.js' );
-	var Settings = require( './settings.js' );
+	var Index = require('./index.js');
+	var Home = require('./home.js');
+	var Settings = require('./settings.js');
 
 	// declare our top-level routes and their hierarchy
 	var routes = (
-		<Route path="/" handler={Home}>
+		<Route path="/" handler={Index}>
 			<DefaultRoute handler={Home}/>
 	    	<Route name="settings" handler={Settings}/>
 		</Route>
