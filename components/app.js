@@ -2,12 +2,26 @@
 	var React = require( 'react' );
 	var Router = require('react-router'),
 		Route = Router.Route,
-		DefaultRoute = Router.DefaultRoute;
+		DefaultRoute = Router.DefaultRoute,
+		RouteHandler = Router.RouteHandler;
 
 	// Components
-	var Index = require('./index.js');
+	var Header = require('./header.js');
 	var Home = require('./home.js');
 	var Settings = require('./settings.js');
+
+	// Parent component that renders the route's content block
+	var Index = React.createClass({
+		displayName: 'Index',
+		render: function() {
+			return (
+				<div className="content">
+					<Header></Header>
+					<RouteHandler/>
+				</div>
+			);
+		}
+	});
 
 	// declare our top-level routes and their hierarchy
 	var routes = (

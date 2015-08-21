@@ -445,7 +445,6 @@ body {
   /* currently ems cause chrome bug misinterpreting rems on body element */
   line-height: 1.6;
   font-weight: 400;
-  font-family: "Raleway", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
   color: #222; }
 
 /* Typography
@@ -701,7 +700,7 @@ there.
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
   .icon {
     background-image: url("../img/sprite@2x.png");
-    background-size: 141px 87px; } }
+    background-size: 141px 121px; } }
 
 header {
   height: 60px;
@@ -712,7 +711,7 @@ header {
   header .nav-items {
     float: right; }
   header .logo {
-    background-position: 0px -28px;
+    background-position: 0px -62px;
     background-repeat: no-repeat;
     overflow: hidden;
     display: block;
@@ -720,7 +719,7 @@ header {
     height: 29px;
     float: left; }
   header .new-message {
-    background-position: 0px -57px;
+    background-position: 0px -91px;
     background-repeat: no-repeat;
     overflow: hidden;
     display: block;
@@ -736,7 +735,7 @@ header {
     margin-right: 24px;
     float: left; }
     header .search .search-icon {
-      background-position: 0px -8px;
+      background-position: 0px -42px;
       background-repeat: no-repeat;
       overflow: hidden;
       display: block;
@@ -783,7 +782,8 @@ header {
       position: absolute;
       top: 40px;
       left: -27px;
-      opacity: 0; }
+      display: none;
+      z-index: 1; }
       header .avatar .dropdown::before {
         content: '';
         position: absolute;
@@ -805,16 +805,83 @@ header {
           text-decoration: none;
           color: #70767f; }
       header .avatar .dropdown.active {
-        opacity: 1; }
-
-* {
-  box-sizing: border-box; }
-
-body {
-  background-color: white;
-  color: #262728; }
+        display: block; }
 
 .hero {
   height: 425px;
   background-image: url('../img/hero.jpg');
-  background-size: cover; }
+  background-size: cover;
+  padding-top: 135px; }
+  .hero .new-message-box {
+    width: 100%;
+    max-width: 575px;
+    height: 155px;
+    margin: 0 auto;
+    background-color: rgba(0, 204, 153, 0.7);
+    opacity: 0.7;
+    border-radius: 3px;
+    padding: 30px; }
+    .hero .new-message-box > input {
+      margin-top: 10px;
+      background-color: transparent;
+      font-size: 30px;
+      outline: 0;
+      border: 0;
+      color: white;
+      font-weight: lighter;
+      width: 100%; }
+      .hero .new-message-box > input::-webkit-input-placeholder {
+        color: white;
+        font-weight: light; }
+      .hero .new-message-box > input:-moz-placeholder {
+        /* Firefox 18- */
+        color: white;
+        font-weight: light; }
+      .hero .new-message-box > input::-moz-placeholder {
+        /* Firefox 19+ */
+        color: white;
+        font-weight: light; }
+      .hero .new-message-box > input:-ms-input-placeholder {
+        color: white;
+        font-weight: light; }
+    .hero .new-message-box .actions {
+      position: absolute;
+      bottom: 30px;
+      height: 20px; }
+      .hero .new-message-box .actions a {
+        margin-right: 45px; }
+        .hero .new-message-box .actions a:last-of-type {
+          margin-right: 0px; }
+      .hero .new-message-box .actions .add-photo {
+        background-position: 0px -8px;
+        background-repeat: no-repeat;
+        overflow: hidden;
+        display: inline-block;
+        width: 22px;
+        height: 17px;
+        margin-right: 10px; }
+      .hero .new-message-box .actions .add-video {
+        background-position: 0px -25px;
+        background-repeat: no-repeat;
+        overflow: hidden;
+        display: inline-block;
+        width: 22px;
+        height: 17px;
+        margin-right: 10px; }
+      .hero .new-message-box .actions .label {
+        vertical-align: text-bottom; }
+
+* {
+  font-family: 'Open Sans', sans-serif;
+  box-sizing: border-box; }
+
+a {
+  color: white;
+  text-decoration: none; }
+  a:hover {
+    text-decoration: none;
+    color: white; }
+
+body {
+  background-color: white;
+  color: #262728; }

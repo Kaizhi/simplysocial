@@ -1,7 +1,9 @@
 $down-arrow: -0px -0px 11px 8px;
-$magnifying-glass: -0px -8px 20px 20px;
-$logo: -0px -28px 141px 29px;
-$new-message: -0px -57px 35px 30px;
+$photo: -0px -8px 22px 17px;
+$video: -0px -25px 22px 17px;
+$magnifying-glass: -0px -42px 20px 20px;
+$logo: -0px -62px 141px 29px;
+$new-message: -0px -91px 35px 30px;
 
 @mixin sprite-width($sprite) {
   width: nth($sprite, 3);
@@ -42,6 +44,6 @@ $new-message: -0px -57px 35px 30px;
 (min-resolution: 192dpi) {
   .icon {
     background-image: url("../img/sprite@2x.png");
-    background-size: 141px 87px;
+    background-size: 141px 121px;
   }
 }
