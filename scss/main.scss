@@ -12,3 +12,9 @@ body {
 	background-color: $secondaryLinkColor;
 	color: $bodyTextColor;
 }
+
+.hero {
+	height: 425px;
+	background-image: url('../img/hero.jpg');
+	background-size: cover;
+}

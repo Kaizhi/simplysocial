@@ -11,12 +11,17 @@
     "gulp-if": "^1.2.5",
     "gulp-plumber": "^0.6.6",
     "gulp-sass": "^1.1.0",
+    "reactify": "^1.1.1",
     "sprity": "^1.0.7",
-    "sprity-sass": "^1.0.4"
+    "sprity-sass": "^1.0.4",
+    "vinyl-source-stream": "^1.1.0"
   },
   "dependencies": {
+    "browserify": "^11.0.1",
     "express": "^4.10.7",
     "express-handlebars": "^1.1.0",
-    "path": "^0.11.14"
+    "path": "^0.11.14",
+    "react": "^0.13.3",
+    "react-router": "^0.13.3"
   }
 }

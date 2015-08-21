@@ -4,9 +4,14 @@ var plumber = require('gulp-plumber');
 var sass = require('gulp-sass');
 var autoprefixer = require('gulp-autoprefixer');
 var sprity = require('sprity');
+var browserify = require('browserify');
+var source = require("vinyl-source-stream");
+var reactify = require('reactify');
 
 var sourcePaths = {
-  styles: ['scss/**/*.scss']
+  styles: ['scss/**/*.scss'],
+  react: ['components/**/*.js'],
+  icons: ['icons/**/*.png']
 };
 
 var distPaths = {
@@ -42,10 +47,21 @@ gulp.task('sass', function () {
     .pipe(gulp.dest( distPaths.styles ));
 });
 
-gulp.task('watch', function() {
-  gulp.watch(sourcePaths.styles, ['sass']);
+gulp.task('browserify', function(){
+  var b = browserify();
+  b.transform(reactify); // use the reactify transform
+  b.add('components/app.js');
+  return b.bundle()
+    .pipe(source('app.js'))
+    .pipe(gulp.dest('public/js/'));
 });
 
-gulp.task('build', ['sprites', 'sass']);
+gulp.task('watch', function() {
+  gulp.watch(sourcePaths.styles, ['sass']);
+  gulp.watch(sourcePaths.react, ['browserify']);
+  gulp.watch(sourcePaths.icons, ['sprites']);
+});
+
+gulp.task('build', ['sprites', 'sass', 'browserify']);
 
 gulp.task('default', ['build', 'watch']);

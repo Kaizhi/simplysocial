@@ -706,7 +706,7 @@ there.
 header {
   height: 60px;
   background-color: #262728;
-  padding: 15px 100px; }
+  padding: 15px 0; }
   header .nav-items {
     float: right; }
   header .logo {
@@ -731,3 +731,8 @@ header {
 body {
   background-color: #00cc99;
   color: #262728; }
+
+.hero {
+  height: 425px;
+  background-image: url('../img/hero.jpg');
+  background-size: cover; }
