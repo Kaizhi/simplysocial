@@ -14,7 +14,7 @@ var Settings = React.createClass({
 					<AccountSettings/>
 					<NotificationSettings/>
 					<PrivacySettings/>
-
+					<button className="primary">Save Changes</button>
 				</div>
 				<Footer/>
 			</div>

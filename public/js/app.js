@@ -3,16 +3,56 @@ var React = require( 'react' );
 
 var PrivacySettings = React.createClass({
 	displayName: 'PrivacySettings',
+	componentDidMount: function () {
+		React.findDOMNode(this.refs.radio).checked = true;
+	},
+
 	render: function() {
 		return (
 			React.createElement("section", null, 
 				React.createElement("h4", null, "Privacy"), 
-				React.createElement("div", {className: "row"}, 
-					React.createElement("div", {className: "checkbox"}, 
-					    React.createElement("input", {type: "checkbox", name: "toggle", className: "toggle-checkbox", id: "notification4"}), 
-					    React.createElement("label", {className: "toggle-label", htmlFor: "notification4"})
+				React.createElement("div", {className: "row radio-row"}, 
+					React.createElement("div", {className: "toggle checkbox"}, 
+					    React.createElement("input", {ref: "radio", type: "radio", name: "toggle", className: "toggle-checkbox", id: "privacy1"}), 
+					    React.createElement("label", {className: "toggle-label", htmlFor: "privacy1"})
 					), 
 					React.createElement("p", null, "email me when someone follows me")
+				), 
+				React.createElement("div", {className: "row radio-row"}, 
+					React.createElement("div", {className: "toggle checkbox"}, 
+					    React.createElement("input", {type: "radio", name: "toggle", className: "toggle-checkbox", id: "privacy2"}), 
+					    React.createElement("label", {className: "toggle-label", htmlFor: "privacy2"})
+					), 
+					React.createElement("p", null, "only allow people I follow to tag me")
+				), 
+				React.createElement("div", {className: "row radio-row"}, 
+					React.createElement("div", {className: "toggle checkbox"}, 
+					    React.createElement("input", {type: "radio", name: "toggle", className: "toggle-checkbox", id: "privacy3"}), 
+					    React.createElement("label", {className: "toggle-label", htmlFor: "privacy3"})
+					), 
+					React.createElement("p", null, "email me when someone follows me")
+				), 
+
+				React.createElement("div", {className: "row"}, 
+					React.createElement("div", {className: "toggle checkbox"}, 
+					    React.createElement("input", {type: "checkbox", name: "toggle", className: "toggle-checkbox", id: "privacy4"}), 
+					    React.createElement("label", {className: "toggle-label", htmlFor: "privacy4"})
+					), 
+					React.createElement("p", null, "add a location to my posts")
+				), 
+				React.createElement("div", {className: "row"}, 
+					React.createElement("div", {className: "toggle checkbox"}, 
+					    React.createElement("input", {type: "checkbox", name: "toggle", className: "toggle-checkbox", id: "privacy5"}), 
+					    React.createElement("label", {className: "toggle-label", htmlFor: "privacy5"})
+					), 
+					React.createElement("p", null, "let others find me by my email address")
+				), 
+				React.createElement("div", {className: "row"}, 
+					React.createElement("div", {className: "toggle checkbox"}, 
+					    React.createElement("input", {type: "checkbox", name: "toggle", className: "toggle-checkbox", id: "privacy6"}), 
+					    React.createElement("label", {className: "toggle-label", htmlFor: "privacy6"})
+					), 
+					React.createElement("p", null, "tailor ads based on my information")
 				)
 			)
 		)
@@ -543,8 +583,8 @@ var Settings = React.createClass({
 					React.createElement("h1", null, "Settings"), 
 					React.createElement(AccountSettings, null), 
 					React.createElement(NotificationSettings, null), 
-					React.createElement(PrivacySettings, null)
-
+					React.createElement(PrivacySettings, null), 
+					React.createElement("button", {className: "primary"}, "Save Changes")
 				), 
 				React.createElement(Footer, null)
 			)

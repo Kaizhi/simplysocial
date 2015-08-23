@@ -758,7 +758,7 @@ footer {
     border: 2px solid #bec3cc;
     border-radius: 23px;
     background-color: #bec3cc;
-    transition: background-color 0.3s ease-in, border-color .3s ease-in; }
+    transition: background-color .2s ease-in-out, border-color .2s ease-in-out; }
   .toggle .toggle-label:before {
     content: "";
     display: block;
@@ -771,7 +771,7 @@ footer {
     right: 25px;
     border: 2px solid #bec3cc;
     border-radius: 23px;
-    transition: all 0.3s ease-in 0s; }
+    transition: all .2s ease-in-out 0s; }
   .toggle .toggle-checkbox:checked + .toggle-label {
     background-color: #00cc99; }
   .toggle .toggle-checkbox:checked + .toggle-label, .toggle .toggle-checkbox:checked + .toggle-label:before {
@@ -780,6 +780,37 @@ footer {
     right: 0px; }
 
 /* custom checkbox */
+.checkbox {
+  width: 24px; }
+  .checkbox .toggle-label {
+    line-height: 23px;
+    background-color: white; }
+  .checkbox .toggle-label:before {
+    width: 16px;
+    height: 16px;
+    margin: 0px;
+    top: 4px;
+    bottom: 0;
+    right: 4px;
+    border: 0; }
+  .checkbox .toggle-checkbox:checked + .toggle-label {
+    background-color: white;
+    border-color: #bec3cc; }
+  .checkbox .toggle-checkbox:checked + .toggle-label:before {
+    background-color: #00cc99;
+    border-color: white; }
+  .checkbox .toggle-checkbox:checked + .toggle-label:before {
+    right: 4px; }
+
+button.primary {
+  width: 155px;
+  height: 40px;
+  background-color: #00cc99;
+  border-radius: 3px;
+  border: 0;
+  color: white;
+  font-size: 14px; }
+
 .settings {
   width: 100%;
   max-width: 575px;
@@ -874,12 +905,18 @@ footer {
       clear: both;
       overflow: auto;
       margin-bottom: 20px; }
-      .settings section .row .toggle {
+      .settings section .row .toggle, .settings section .row .checkbox {
         float: left;
         margin-right: 25px; }
       .settings section .row p {
         margin: 0;
         float: left; }
+    .settings section .radio-row {
+      margin-bottom: 15px; }
+      .settings section .radio-row:nth-of-type(3n) {
+        margin-bottom: 25px; }
+  .settings button.primary {
+    margin-top: 50px; }
 
 @media only screen and (max-width: 767px) {
   .settings section .edit-account {

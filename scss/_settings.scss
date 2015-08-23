@@ -19,7 +19,7 @@
         line-height: 23px;
         border: 2px solid $iconColor; border-radius: 23px;
         background-color: $iconColor;
-        transition: background-color 0.3s ease-in, border-color .3s ease-in;
+        transition: background-color .2s ease-in-out, border-color .2s ease-in-out;
     }
     .toggle-label:before {
         content: "";
@@ -33,7 +33,7 @@
         right: 25px;
         border: 2px solid $iconColor;
         border-radius: 23px;
-        transition: all 0.3s ease-in 0s;
+        transition: all .2s ease-in-out 0s;
     }
     .toggle-checkbox:checked + .toggle-label {
         background-color: $secondaryLinkColor;
@@ -47,6 +47,44 @@
 }
 
 /* custom checkbox */
+.checkbox {
+    width: 24px;
+
+    .toggle-label {
+        line-height: 23px;
+        background-color: white;
+    }
+    .toggle-label:before {
+        width: 16px;
+        height: 16px;
+        margin: 0px;
+        top: 4px;
+        bottom: 0;
+        right: 4px;
+        border: 0;
+    }
+    .toggle-checkbox:checked + .toggle-label {
+        background-color: white;
+        border-color: $iconColor;
+    }
+    .toggle-checkbox:checked + .toggle-label:before {
+       background-color: $secondaryLinkColor;
+       border-color: white;
+    }
+    .toggle-checkbox:checked + .toggle-label:before {
+        right: 4px;
+    }
+}
+
+button.primary {
+	width: 155px;
+	height: 40px;
+	background-color: $secondaryLinkColor;
+	border-radius: 3px;
+	border: 0;
+	color: white;
+	font-size: 14px;
+}
 
 
 .settings {
@@ -157,7 +195,7 @@
 			overflow: auto;
 			margin-bottom: 20px;
 
-			.toggle {
+			.toggle, .checkbox {
 				float: left;
 				margin-right: 25px;
 			}
@@ -167,7 +205,19 @@
 				float: left;
 			}
 		}
+
+		.radio-row {
+			margin-bottom: 15px;
+
+			&:nth-of-type(3n) {
+				margin-bottom: 25px;
+			}
+		}
 	} /* end section*/
+
+	button.primary {
+		margin-top: 50px;
+	}
 }
 
 @media only screen and (max-width: 767px) {
