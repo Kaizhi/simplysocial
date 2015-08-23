@@ -13,10 +13,15 @@
 	// Parent component that renders the route's content block
 	var Index = React.createClass({
 		displayName: 'Index',
+
+		showModal: function () {
+			console.log('show modal');
+		},
+
 		render: function() {
 			return (
 				<div className="content">
-					<Header></Header>
+					<Header showModal={this.showModal}></Header>
 					<RouteHandler/>
 				</div>
 			);

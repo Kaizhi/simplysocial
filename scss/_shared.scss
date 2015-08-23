@@ -1,0 +1,87 @@
+/* animated toggles*/
+.toggle {
+    position: relative;
+    width: 49px;
+    cursor: pointer;
+    -webkit-user-select:none;
+    -moz-user-select:none;
+    -ms-user-select: none;
+
+    .toggle-checkbox {
+        display: none;
+    }
+    .toggle-label {
+        display: block;
+        overflow: hidden;
+        cursor: pointer;
+        height: 23px;
+        padding: 0;
+        line-height: 23px;
+        border: 2px solid $iconColor; border-radius: 23px;
+        background-color: $iconColor;
+        transition: background-color .2s ease-in-out, border-color .2s ease-in-out;
+    }
+    .toggle-label:before {
+        content: "";
+        display: block;
+        width: 20px;
+        margin: 0px;
+        background: white;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 25px;
+        border: 2px solid $iconColor;
+        border-radius: 23px;
+        transition: all .2s ease-in-out 0s;
+    }
+    .toggle-checkbox:checked + .toggle-label {
+        background-color: $secondaryLinkColor;
+    }
+    .toggle-checkbox:checked + .toggle-label, .toggle-checkbox:checked + .toggle-label:before {
+       border-color: $secondaryLinkColor;
+    }
+    .toggle-checkbox:checked + .toggle-label:before {
+        right: 0px;
+    }
+}
+
+/* custom checkbox */
+.checkbox {
+    width: 24px;
+
+    .toggle-label {
+        line-height: 23px;
+        background-color: white;
+    }
+    .toggle-label:before {
+        width: 16px;
+        height: 16px;
+        margin: 0px;
+        top: 4px;
+        bottom: 0;
+        right: 4px;
+        border: 0;
+    }
+    .toggle-checkbox:checked + .toggle-label {
+        background-color: white;
+        border-color: $iconColor;
+    }
+    .toggle-checkbox:checked + .toggle-label:before {
+       background-color: $secondaryLinkColor;
+       border-color: white;
+    }
+    .toggle-checkbox:checked + .toggle-label:before {
+        right: 4px;
+    }
+}
+
+button.primary {
+	width: 155px;
+	height: 40px;
+	background-color: $secondaryLinkColor;
+	border-radius: 3px;
+	border: 0;
+	color: white;
+	font-size: 14px;
+}

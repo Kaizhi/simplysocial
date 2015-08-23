@@ -2,6 +2,7 @@
 @import "_mixins";
 @import "_variables";
 @import "_sprites";
+@import "_shared";
 
 * {
 	font-family: 'Open Sans', sans-serif;
@@ -32,3 +33,4 @@ body {
 @import "_posts";
 @import "_footer";
 @import "_settings";
+@import "_modal.scss";

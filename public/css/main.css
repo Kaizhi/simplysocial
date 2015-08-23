@@ -323,7 +323,80 @@ td, th {
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
   .icon {
     background-image: url("../img/sprite@2x.png");
-    background-size: 141px 390px; } }
+    background-size: 141px 449px; } }
+
+/* animated toggles*/
+.toggle {
+  position: relative;
+  width: 49px;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none; }
+  .toggle .toggle-checkbox {
+    display: none; }
+  .toggle .toggle-label {
+    display: block;
+    overflow: hidden;
+    cursor: pointer;
+    height: 23px;
+    padding: 0;
+    line-height: 23px;
+    border: 2px solid #bec3cc;
+    border-radius: 23px;
+    background-color: #bec3cc;
+    transition: background-color .2s ease-in-out, border-color .2s ease-in-out; }
+  .toggle .toggle-label:before {
+    content: "";
+    display: block;
+    width: 20px;
+    margin: 0px;
+    background: white;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 25px;
+    border: 2px solid #bec3cc;
+    border-radius: 23px;
+    transition: all .2s ease-in-out 0s; }
+  .toggle .toggle-checkbox:checked + .toggle-label {
+    background-color: #00cc99; }
+  .toggle .toggle-checkbox:checked + .toggle-label, .toggle .toggle-checkbox:checked + .toggle-label:before {
+    border-color: #00cc99; }
+  .toggle .toggle-checkbox:checked + .toggle-label:before {
+    right: 0px; }
+
+/* custom checkbox */
+.checkbox {
+  width: 24px; }
+  .checkbox .toggle-label {
+    line-height: 23px;
+    background-color: white; }
+  .checkbox .toggle-label:before {
+    width: 16px;
+    height: 16px;
+    margin: 0px;
+    top: 4px;
+    bottom: 0;
+    right: 4px;
+    border: 0; }
+  .checkbox .toggle-checkbox:checked + .toggle-label {
+    background-color: white;
+    border-color: #bec3cc; }
+  .checkbox .toggle-checkbox:checked + .toggle-label:before {
+    background-color: #00cc99;
+    border-color: white; }
+  .checkbox .toggle-checkbox:checked + .toggle-label:before {
+    right: 4px; }
+
+button.primary {
+  width: 155px;
+  height: 40px;
+  background-color: #00cc99;
+  border-radius: 3px;
+  border: 0;
+  color: white;
+  font-size: 14px; }
 
 * {
   font-family: 'Open Sans', sans-serif;
@@ -351,7 +424,7 @@ header {
   header .nav-items {
     float: right; }
   header .logo {
-    background-position: 0px -227px;
+    background-position: 0px -286px;
     background-repeat: no-repeat;
     overflow: hidden;
     display: block;
@@ -359,7 +432,7 @@ header {
     height: 29px;
     float: left; }
   header .new-message {
-    background-position: 0px -256px;
+    background-position: 0px -315px;
     background-repeat: no-repeat;
     overflow: hidden;
     display: block;
@@ -376,7 +449,7 @@ header {
     margin-right: 24px;
     float: left; }
     header .search .search-icon {
-      background-position: 0px -165px;
+      background-position: 0px -199px;
       background-repeat: no-repeat;
       overflow: hidden;
       display: block;
@@ -509,7 +582,7 @@ header {
         .hero .new-message-box .actions a:last-of-type {
           margin-right: 0px; }
       .hero .new-message-box .actions .add-photo {
-        background-position: 0px -128px;
+        background-position: 0px -162px;
         background-repeat: no-repeat;
         overflow: hidden;
         display: inline-block;
@@ -551,21 +624,21 @@ header {
         .hero .subnav .display-options > div:last-of-type {
           margin-right: 0px; }
     .hero .subnav .list {
-      background-position: 0px -21px;
+      background-position: 0px -34px;
       background-repeat: no-repeat;
       overflow: hidden;
       display: inline-block;
       width: 13px;
       height: 13px; }
       .hero .subnav .list.active, .hero .subnav .list:hover {
-        background-position: 0px -8px;
+        background-position: 0px -21px;
         background-repeat: no-repeat;
         overflow: hidden;
         display: inline-block;
         width: 13px;
         height: 13px; }
     .hero .subnav .tile {
-      background-position: 0px -34px;
+      background-position: 0px -8px;
       background-repeat: no-repeat;
       overflow: hidden;
       display: inline-block;
@@ -651,14 +724,14 @@ header {
         margin-right: 20px;
         cursor: pointer; }
       .posts .post .metadata .reply {
-        background-position: 0px -94px;
+        background-position: 0px -77px;
         background-repeat: no-repeat;
         overflow: hidden;
         display: block;
         width: 17px;
         height: 17px; }
       .posts .post .metadata .like {
-        background-position: 0px -77px;
+        background-position: 0px -128px;
         background-repeat: no-repeat;
         overflow: hidden;
         display: block;
@@ -674,7 +747,7 @@ header {
       height: 390px;
       position: relative; }
       .posts .post .post-media .play-button {
-        background-position: 0px -286px;
+        background-position: 0px -345px;
         background-repeat: no-repeat;
         overflow: hidden;
         display: block;
@@ -737,79 +810,6 @@ footer {
       color: #00cc99; }
       footer li a:hover {
         color: #00cc99; }
-
-/* animated toggles*/
-.toggle {
-  position: relative;
-  width: 49px;
-  cursor: pointer;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none; }
-  .toggle .toggle-checkbox {
-    display: none; }
-  .toggle .toggle-label {
-    display: block;
-    overflow: hidden;
-    cursor: pointer;
-    height: 23px;
-    padding: 0;
-    line-height: 23px;
-    border: 2px solid #bec3cc;
-    border-radius: 23px;
-    background-color: #bec3cc;
-    transition: background-color .2s ease-in-out, border-color .2s ease-in-out; }
-  .toggle .toggle-label:before {
-    content: "";
-    display: block;
-    width: 20px;
-    margin: 0px;
-    background: white;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    right: 25px;
-    border: 2px solid #bec3cc;
-    border-radius: 23px;
-    transition: all .2s ease-in-out 0s; }
-  .toggle .toggle-checkbox:checked + .toggle-label {
-    background-color: #00cc99; }
-  .toggle .toggle-checkbox:checked + .toggle-label, .toggle .toggle-checkbox:checked + .toggle-label:before {
-    border-color: #00cc99; }
-  .toggle .toggle-checkbox:checked + .toggle-label:before {
-    right: 0px; }
-
-/* custom checkbox */
-.checkbox {
-  width: 24px; }
-  .checkbox .toggle-label {
-    line-height: 23px;
-    background-color: white; }
-  .checkbox .toggle-label:before {
-    width: 16px;
-    height: 16px;
-    margin: 0px;
-    top: 4px;
-    bottom: 0;
-    right: 4px;
-    border: 0; }
-  .checkbox .toggle-checkbox:checked + .toggle-label {
-    background-color: white;
-    border-color: #bec3cc; }
-  .checkbox .toggle-checkbox:checked + .toggle-label:before {
-    background-color: #00cc99;
-    border-color: white; }
-  .checkbox .toggle-checkbox:checked + .toggle-label:before {
-    right: 4px; }
-
-button.primary {
-  width: 155px;
-  height: 40px;
-  background-color: #00cc99;
-  border-radius: 3px;
-  border: 0;
-  color: white;
-  font-size: 14px; }
 
 .settings {
   width: 100%;
@@ -879,7 +879,7 @@ button.primary {
         .settings section .edit-account .icon.password {
           top: 8px;
           opacity: 0.5;
-          background-position: 0px -185px;
+          background-position: 0px -219px;
           background-repeat: no-repeat;
           overflow: hidden;
           display: block;
@@ -895,7 +895,7 @@ button.primary {
           height: 17px; }
         .settings section .edit-account .icon.user {
           top: 10px;
-          background-position: 0px -145px;
+          background-position: 0px -179px;
           background-repeat: no-repeat;
           overflow: hidden;
           display: block;
@@ -916,8 +916,94 @@ button.primary {
       .settings section .radio-row:nth-of-type(3n) {
         margin-bottom: 25px; }
   .settings button.primary {
-    margin-top: 50px; }
+    margin-top: 50px;
+    margin-bottom: 100px; }
 
 @media only screen and (max-width: 767px) {
   .settings section .edit-account {
     width: 65%; } }
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 5;
+  display: none; }
+  .overlay.active {
+    display: block; }
+  .overlay .modal {
+    width: 575px;
+    height: 215px;
+    position: absolute;
+    background-color: #dee1e5;
+    border-radius: 3px;
+    top: 180px;
+    left: 50%;
+    margin-left: -287.5px;
+    padding: 25px 28px 18px 28px; }
+    .overlay .modal h4 {
+      margin: 0;
+      color: #70767f;
+      font-size: 16px;
+      font-weight: lighter; }
+    .overlay .modal textarea {
+      width: 100%;
+      height: 90px;
+      border-radius: 3px;
+      border: 0;
+      margin: 15px 0;
+      padding: 10px; }
+      .overlay .modal textarea:focus {
+        outline: 0; }
+    .overlay .modal .actions {
+      position: absolute;
+      bottom: 18px;
+      height: 20px; }
+      .overlay .modal .actions a {
+        margin-right: 45px;
+        color: #70767f;
+        text-decoration: none;
+        opacity: 0.5; }
+        .overlay .modal .actions a:hover {
+          text-decoration: none;
+          opacity: 1; }
+        .overlay .modal .actions a:last-of-type {
+          margin-right: 0px; }
+      .overlay .modal .actions .add-photo {
+        background-position: 0px -145px;
+        background-repeat: no-repeat;
+        overflow: hidden;
+        display: inline-block;
+        width: 22px;
+        height: 17px;
+        margin-right: 10px; }
+      .overlay .modal .actions .add-video {
+        background-position: 0px -94px;
+        background-repeat: no-repeat;
+        overflow: hidden;
+        display: inline-block;
+        width: 22px;
+        height: 17px;
+        margin-right: 10px; }
+      .overlay .modal .actions .label {
+        vertical-align: text-bottom; }
+    .overlay .modal button.primary {
+      position: absolute;
+      bottom: 15px;
+      right: 25px;
+      width: 75px;
+      height: 35px; }
+    .overlay .modal .close {
+      background-position: 0px -261px;
+      background-repeat: no-repeat;
+      overflow: hidden;
+      display: block;
+      width: 25px;
+      height: 25px;
+      position: absolute;
+      top: -25px;
+      right: -30px;
+      cursor: pointer; }

@@ -1,20 +1,23 @@
 $down-arrow: -0px -0px 11px 8px;
-$list-active: -0px -8px 13px 13px;
-$list-inactive: -0px -21px 13px 13px;
-$tile-inactive: -0px -34px 13px 13px;
+$tile-inactive: -0px -8px 13px 13px;
+$list-active: -0px -21px 13px 13px;
+$list-inactive: -0px -34px 13px 13px;
 $tile-active: -0px -47px 13px 13px;
 $video: -0px -60px 22px 17px;
-$like: -0px -77px 17px 17px;
-$reply: -0px -94px 17px 17px;
+$reply: -0px -77px 17px 17px;
+$video-dark: -0px -94px 22px 17px;
 $email: -0px -111px 20px 17px;
-$photo: -0px -128px 22px 17px;
-$user: -0px -145px 20px 20px;
-$magnifying-glass: -0px -165px 20px 20px;
-$lock: -0px -185px 20px 21px;
-$lock-active: -0px -206px 20px 21px;
-$logo: -0px -227px 141px 29px;
-$new-message: -0px -256px 35px 30px;
-$play-video: -0px -286px 104px 104px;
+$like: -0px -128px 17px 17px;
+$photo-dark: -0px -145px 22px 17px;
+$photo: -0px -162px 22px 17px;
+$user: -0px -179px 20px 20px;
+$magnifying-glass: -0px -199px 20px 20px;
+$lock: -0px -219px 20px 21px;
+$lock-active: -0px -240px 20px 21px;
+$close-modal: -0px -261px 25px 25px;
+$logo: -0px -286px 141px 29px;
+$new-message: -0px -315px 35px 30px;
+$play-video: -0px -345px 104px 104px;
 
 @mixin sprite-width($sprite) {
   width: nth($sprite, 3);
@@ -55,6 +58,6 @@ $play-video: -0px -286px 104px 104px;
 (min-resolution: 192dpi) {
   .icon {
     background-image: url("../img/sprite@2x.png");
-    background-size: 141px 390px;
+    background-size: 141px 449px;
   }
 }
