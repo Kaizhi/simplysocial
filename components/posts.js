@@ -54,6 +54,7 @@ var Posts = React.createClass({
 			);
 		});
 
+		// For tile display type, we generate up to 3 columns of posts
 		if (this.props.displayOption !== 'list'){
 
 			for (var i=0; i<postItems.length; i++) {

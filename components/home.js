@@ -1,6 +1,7 @@
 var React = require( 'react' );
 var SubnavItem = require('./subnavItem.js');
 var Posts = require('./posts.js');
+var Footer = require('./footer.js');
 
 var Home = React.createClass({
 	displayName: 'Home',
@@ -153,6 +154,7 @@ var Home = React.createClass({
 				</section>
 
 				<Posts postItems={this.state.postItems} displayOption={this.state.activeDisplayOption} postFilter={this.state.activeSubnavItem}/>
+				<Footer/>
 			</div>
 		);
 	}
