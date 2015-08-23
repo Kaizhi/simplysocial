@@ -24,60 +24,69 @@ var Home = React.createClass({
 	    			type: 'text',
 	    			ownerName: 'Fill Murray',
 	    			message: 'How to Get Inspired: the Right Way - Designmodo <a target="_blank" href="http://bit.ly/1lE4uJc">bit.ly/1lE4uJc</a> Good stuff from <a target="_blank" href="http://designmodo.com">@designmodo</a>',
-	    			responses: []
+	    			responses: [],
+	    			timestamp: '2m'
 	    		},
 	    		{
 	    			type: 'photo',
 	    			ownerName: 'Amy Smith',
 	    			message: 'My view this morning is simply beautiful!',
 	    			media: 'http://lorempixel.com/575/390/',
-	    			responses: []
+	    			responses: [],
+	    			timestamp: '5m'
 	    		},
 	    		{
 	    			type: 'video',
 	    			ownerName: 'Fill Murray',
 	    			message: 'My view this morning is simply beautiful! Check out this video',
 	    			media: 'http://lorempixel.com/575/390/',
-	    			responses: []
+	    			responses: [],
+	    			timestamp: '20m'
 	    		},
 	    		{
 	    			type: 'photo',
 	    			ownerName: 'Fill Murray',
 	    			message: 'How to Get Inspired: the Right Way - Designmodo <a target="_blank" href="http://bit.ly/1lE4uJc">bit.ly/1lE4uJc</a> Good stuff from <a target="_blank" href="http://designmodo.com">@designmodo</a>',
 	    			media: 'http://lorempixel.com/575/390/',
-	    			responses: []
+	    			responses: [],
+	    			timestamp: '1h'
 	    		},
 	    		{
 	    			type: 'video',
 	    			ownerName: 'Fill Murray',
 	    			message: 'My view this morning is simply beautiful! Check out this video',
 	    			media: 'http://lorempixel.com/575/390/',
-	    			responses: []
+	    			responses: [],
+	    			timestamp: '1h'
 	    		},
 	    		{
 	    			type: 'text',
 	    			ownerName: 'Meg Robichaud',
 	    			message: 'How to Get Inspired: the Right Way - Designmodo <a target="_blank" href="http://bit.ly/1lE4uJc">bit.ly/1lE4uJc</a> Good stuff from <a target="_blank" href="http://designmodo.com">@designmodo</a>',
-	    			responses: []
+	    			responses: [],
+	    			timestamp: '1h'
 	    		},
 	    		{
 	    			type: 'photo',
 	    			ownerName: 'Fill Murray',
 	    			message: 'How to Get Inspired: the Right Way - Designmodo <a target="_blank" href="http://bit.ly/1lE4uJc">bit.ly/1lE4uJc</a> Good stuff from <a target="_blank" href="http://designmodo.com">@designmodo</a>',
 	    			media: 'http://lorempixel.com/575/390/',
-	    			responses: []
+	    			responses: [],
+	    			timestamp: '1h'
 	    		},
 	    		{
 	    			type: 'text',
 	    			ownerName: 'Angela F',
 	    			message: 'How to Get Inspired: the Right Way - Designmodo <a target="_blank" href="http://bit.ly/1lE4uJc">bit.ly/1lE4uJc</a> Good stuff from <a target="_blank" href="http://designmodo.com">@designmodo</a>',
-	    			responses: []
+	    			responses: [],
+	    			timestamp: '1h'
 	    		},
 	    		{
 	    			type: 'text',
 	    			ownerName: 'Larry Murray',
 	    			message: 'How to Get Inspired: the Right Way - Designmodo <a target="_blank" href="http://bit.ly/1lE4uJc">bit.ly/1lE4uJc</a> Good stuff from <a target="_blank" href="http://designmodo.com">@designmodo</a>',
-	    			responses: []
+	    			responses: [],
+	    			timestamp: '3h'
 	    		},
 	    	]
 		};

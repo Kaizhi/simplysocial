@@ -1,14 +1,16 @@
 $down-arrow: -0px -0px 11px 8px;
-$list-inactive: -0px -8px 13px 13px;
-$tile-inactive: -0px -21px 13px 13px;
-$tile-active: -0px -34px 13px 13px;
-$list-active: -0px -47px 13px 13px;
+$list-active: -0px -8px 13px 13px;
+$list-inactive: -0px -21px 13px 13px;
+$tile-inactive: -0px -34px 13px 13px;
+$tile-active: -0px -47px 13px 13px;
 $video: -0px -60px 22px 17px;
-$photo: -0px -77px 22px 17px;
-$magnifying-glass: -0px -94px 20px 20px;
-$logo: -0px -114px 141px 29px;
-$new-message: -0px -143px 35px 30px;
-$play-video: -0px -173px 104px 104px;
+$like: -0px -77px 17px 17px;
+$photo: -0px -94px 22px 17px;
+$reply: -0px -111px 17px 17px;
+$magnifying-glass: -0px -128px 20px 20px;
+$logo: -0px -148px 141px 29px;
+$new-message: -0px -177px 35px 30px;
+$play-video: -0px -207px 104px 104px;
 
 @mixin sprite-width($sprite) {
   width: nth($sprite, 3);
@@ -49,6 +51,6 @@ $play-video: -0px -173px 104px 104px;
 (min-resolution: 192dpi) {
   .icon {
     background-image: url("../img/sprite@2x.png");
-    background-size: 141px 277px;
+    background-size: 141px 311px;
   }
 }

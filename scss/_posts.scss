@@ -30,6 +30,12 @@ $trayContentWidth: 1175px;
 			max-width: 375px;
 			float: left;
 			display: inline-block;
+
+			.metadata {
+				margin: 20px 0;
+				position: initial;
+				float: right;
+			}
 		}
 	}
 
@@ -44,6 +50,7 @@ $trayContentWidth: 1175px;
 
 		.post-content {
 			padding: $postPadding;
+			position: relative;
 		}
 
 		.avatar {
@@ -75,6 +82,34 @@ $trayContentWidth: 1175px;
 				&:hover {
 					color: $iconColor;
 				}
+			}
+		}
+
+		.metadata {
+			position: absolute;
+			top: $postPadding;
+			right: $postPadding;
+
+			.icon {
+				float: left;
+				margin-right: 20px;
+				cursor: pointer;
+			}
+
+			.reply {
+				@include sprite($reply);
+			}
+
+			.like {
+				@include sprite($like);
+			}
+
+			p {
+				margin: 0;
+				float: left;
+				font-size: 14px;
+				color: $iconColor;
+				line-height: 1.3em;
 			}
 		}
 

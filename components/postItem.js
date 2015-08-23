@@ -25,6 +25,11 @@ var PostItem = React.createClass({
 						<p className="owner-name">{this.props.post.ownerName}</p>
 						<p dangerouslySetInnerHTML={{__html: this.props.post.message}} />
 					</div>
+					<div className="metadata">
+						<div className="icon reply"/>
+						<div className="icon like"/>
+						<p>{this.props.post.timestamp}</p>
+					</div>
 				</div>
 				{media}
 			</div>

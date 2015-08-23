@@ -323,7 +323,7 @@ td, th {
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
   .icon {
     background-image: url("../img/sprite@2x.png");
-    background-size: 141px 277px; } }
+    background-size: 141px 311px; } }
 
 * {
   font-family: 'Open Sans', sans-serif;
@@ -351,7 +351,7 @@ header {
   header .nav-items {
     float: right; }
   header .logo {
-    background-position: 0px -114px;
+    background-position: 0px -148px;
     background-repeat: no-repeat;
     overflow: hidden;
     display: block;
@@ -359,7 +359,7 @@ header {
     height: 29px;
     float: left; }
   header .new-message {
-    background-position: 0px -143px;
+    background-position: 0px -177px;
     background-repeat: no-repeat;
     overflow: hidden;
     display: block;
@@ -376,7 +376,7 @@ header {
     margin-right: 24px;
     float: left; }
     header .search .search-icon {
-      background-position: 0px -94px;
+      background-position: 0px -128px;
       background-repeat: no-repeat;
       overflow: hidden;
       display: block;
@@ -509,7 +509,7 @@ header {
         .hero .new-message-box .actions a:last-of-type {
           margin-right: 0px; }
       .hero .new-message-box .actions .add-photo {
-        background-position: 0px -77px;
+        background-position: 0px -94px;
         background-repeat: no-repeat;
         overflow: hidden;
         display: inline-block;
@@ -551,28 +551,28 @@ header {
         .hero .subnav .display-options > div:last-of-type {
           margin-right: 0px; }
     .hero .subnav .list {
-      background-position: 0px -8px;
-      background-repeat: no-repeat;
-      overflow: hidden;
-      display: inline-block;
-      width: 13px;
-      height: 13px; }
-      .hero .subnav .list.active, .hero .subnav .list:hover {
-        background-position: 0px -47px;
-        background-repeat: no-repeat;
-        overflow: hidden;
-        display: inline-block;
-        width: 13px;
-        height: 13px; }
-    .hero .subnav .tile {
       background-position: 0px -21px;
       background-repeat: no-repeat;
       overflow: hidden;
       display: inline-block;
       width: 13px;
       height: 13px; }
+      .hero .subnav .list.active, .hero .subnav .list:hover {
+        background-position: 0px -8px;
+        background-repeat: no-repeat;
+        overflow: hidden;
+        display: inline-block;
+        width: 13px;
+        height: 13px; }
+    .hero .subnav .tile {
+      background-position: 0px -34px;
+      background-repeat: no-repeat;
+      overflow: hidden;
+      display: inline-block;
+      width: 13px;
+      height: 13px; }
       .hero .subnav .tile.active, .hero .subnav .tile:hover {
-        background-position: 0px -34px;
+        background-position: 0px -47px;
         background-repeat: no-repeat;
         overflow: hidden;
         display: inline-block;
@@ -606,6 +606,10 @@ header {
       max-width: 375px;
       float: left;
       display: inline-block; }
+      .posts.tile .post .metadata {
+        margin: 20px 0;
+        position: initial;
+        float: right; }
   .posts .post {
     width: 100%;
     height: auto;
@@ -615,7 +619,8 @@ header {
     margin-bottom: 25px;
     overflow-y: hidden; }
     .posts .post .post-content {
-      padding: 25px; }
+      padding: 25px;
+      position: relative; }
     .posts .post .avatar {
       width: 30px;
       height: 30px;
@@ -636,11 +641,39 @@ header {
         color: #c8ced5; }
         .posts .post .post-message a:hover {
           color: #bec3cc; }
+    .posts .post .metadata {
+      position: absolute;
+      top: 25px;
+      right: 25px; }
+      .posts .post .metadata .icon {
+        float: left;
+        margin-right: 20px;
+        cursor: pointer; }
+      .posts .post .metadata .reply {
+        background-position: 0px -111px;
+        background-repeat: no-repeat;
+        overflow: hidden;
+        display: block;
+        width: 17px;
+        height: 17px; }
+      .posts .post .metadata .like {
+        background-position: 0px -77px;
+        background-repeat: no-repeat;
+        overflow: hidden;
+        display: block;
+        width: 17px;
+        height: 17px; }
+      .posts .post .metadata p {
+        margin: 0;
+        float: left;
+        font-size: 14px;
+        color: #bec3cc;
+        line-height: 1.3em; }
     .posts .post .post-media {
       height: 390px;
       position: relative; }
       .posts .post .post-media .play-button {
-        background-position: 0px -173px;
+        background-position: 0px -207px;
         background-repeat: no-repeat;
         overflow: hidden;
         display: block;
