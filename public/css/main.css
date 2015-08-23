@@ -700,7 +700,7 @@ there.
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
   .icon {
     background-image: url("../img/sprite@2x.png");
-    background-size: 141px 173px; } }
+    background-size: 141px 277px; } }
 
 * {
   font-family: 'Open Sans', sans-serif;
@@ -875,7 +875,7 @@ header {
         .hero .new-message-box .actions a:last-of-type {
           margin-right: 0px; }
       .hero .new-message-box .actions .add-photo {
-        background-position: 0px -60px;
+        background-position: 0px -77px;
         background-repeat: no-repeat;
         overflow: hidden;
         display: inline-block;
@@ -883,7 +883,7 @@ header {
         height: 17px;
         margin-right: 10px; }
       .hero .new-message-box .actions .add-video {
-        background-position: 0px -77px;
+        background-position: 0px -60px;
         background-repeat: no-repeat;
         overflow: hidden;
         display: inline-block;
@@ -916,21 +916,21 @@ header {
         .hero .subnav .display-options > div:last-of-type {
           margin-right: 0px; }
     .hero .subnav .list {
-      background-position: 0px -21px;
+      background-position: 0px -8px;
       background-repeat: no-repeat;
       overflow: hidden;
       display: inline-block;
       width: 13px;
       height: 13px; }
       .hero .subnav .list.active, .hero .subnav .list:hover {
-        background-position: 0px -8px;
+        background-position: 0px -47px;
         background-repeat: no-repeat;
         overflow: hidden;
         display: inline-block;
         width: 13px;
         height: 13px; }
     .hero .subnav .tile {
-      background-position: 0px -47px;
+      background-position: 0px -21px;
       background-repeat: no-repeat;
       overflow: hidden;
       display: inline-block;
@@ -943,3 +943,60 @@ header {
         display: inline-block;
         width: 13px;
         height: 13px; }
+
+.posts {
+  height: auto;
+  padding-top: 50px; }
+  .posts.list {
+    max-width: 575px;
+    width: 100%;
+    margin: 0 auto; }
+  .posts .post {
+    width: 100%;
+    height: auto;
+    background-color: white;
+    border-radius: 3px;
+    border: 1px solid #dee1e5;
+    margin-bottom: 25px;
+    overflow-y: hidden; }
+    .posts .post .post-content {
+      padding: 25px; }
+    .posts .post .avatar {
+      width: 30px;
+      height: 30px;
+      border-radius: 5px;
+      float: left;
+      margin-right: 25px; }
+    .posts .post .post-message {
+      display: inline-block;
+      color: #70767f;
+      width: calc(100% - 55px); }
+      .posts .post .post-message p {
+        margin: 0; }
+      .posts .post .post-message .owner-name {
+        line-height: 1em;
+        color: #3f454d;
+        margin-bottom: 1em; }
+      .posts .post .post-message a {
+        color: #c8ced5; }
+        .posts .post .post-message a:hover {
+          color: #bec3cc; }
+    .posts .post .post-media {
+      height: 390px;
+      position: relative; }
+      .posts .post .post-media .play-button {
+        background-position: 0px -173px;
+        background-repeat: no-repeat;
+        overflow: hidden;
+        display: block;
+        width: 104px;
+        height: 104px;
+        display: none;
+        position: absolute;
+        top: 50%;
+        margin-top: -50px;
+        left: 50%;
+        margin-left: -50px;
+        cursor: pointer; }
+    .posts .post.video .post-media .play-button {
+      display: block; }

@@ -1,0 +1,78 @@
+$postPadding: 25px;
+
+.posts {
+	height: auto;
+	padding-top: 50px;
+
+	&.list {
+		max-width: $mainContentWidth;
+		width: 100%;
+		margin: 0 auto;
+	}
+
+	.post {
+		width: 100%;
+		height: auto;
+		background-color: white;
+		border-radius: 3px;
+		border: 1px solid $dropdownDividerColor;
+		margin-bottom: $postPadding;
+		overflow-y: hidden;
+
+		.post-content {
+			padding: $postPadding;
+		}
+
+		.avatar {
+			width: 30px;
+			height: 30px;
+			border-radius: 5px;
+			float: left;
+			margin-right: $postPadding;
+		}
+
+		.post-message {
+			display: inline-block;
+			color: $dropdownTextColor;
+			width: calc(100% - 55px);
+
+			p {
+				margin: 0;
+			}
+
+			.owner-name {
+				line-height: 1em;
+				color: $postOwnerColor;
+				margin-bottom: 1em;
+			}
+
+			a {
+				color: $generalLinkColor;
+
+				&:hover {
+					color: $iconColor;
+				}
+			}
+		}
+
+		.post-media {
+			height: 390px;
+			position: relative;
+
+			.play-button {
+				@include sprite($play-video);
+				display: none;
+				position: absolute;
+				top: 50%;
+				margin-top: -50px;
+				left: 50%;
+				margin-left: -50px;
+				cursor: pointer;
+			}
+		}
+
+		&.video .post-media .play-button {
+			display: block;
+		}
+	}
+}

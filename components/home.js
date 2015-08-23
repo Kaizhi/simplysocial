@@ -1,5 +1,6 @@
 var React = require( 'react' );
 var SubnavItem = require('./subnavItem.js');
+var Posts = require('./posts.js');
 
 var Home = React.createClass({
 	displayName: 'Home',
@@ -17,11 +18,47 @@ var Home = React.createClass({
 	getInitialState: function() {
 		return {
 	    	activeSubnavItem: 'all posts',
-	    	activeDisplayOption: 'list'
+	    	activeDisplayOption: 'list',
+	    	postItems: [
+	    		{
+	    			type: 'text',
+	    			ownerName: 'Fill Murray',
+	    			message: 'How to Get Inspired: the Right Way - Designmodo <a target="_blank" href="http://bit.ly/1lE4uJc">bit.ly/1lE4uJc</a> Good stuff from <a target="_blank" href="http://designmodo.com">@designmodo</a>',
+	    			responses: []
+	    		},
+	    		{
+	    			type: 'photo',
+	    			ownerName: 'Amy Smith',
+	    			message: 'My view this morning is simply beautiful!',
+	    			media: 'http://lorempixel.com/575/390/',
+	    			responses: []
+	    		},
+	    		{
+	    			type: 'video',
+	    			ownerName: 'Fill Murray',
+	    			message: 'My view this morning is simply beautiful! Check out this video',
+	    			media: 'http://lorempixel.com/575/390/',
+	    			responses: []
+	    		},
+	    		{
+	    			type: 'text',
+	    			ownerName: 'Meg Robichaud',
+	    			message: 'How to Get Inspired: the Right Way - Designmodo <a target="_blank" href="http://bit.ly/1lE4uJc">bit.ly/1lE4uJc</a> Good stuff from <a target="_blank" href="http://designmodo.com">@designmodo</a>',
+	    			responses: []
+	    		},
+	    		{
+	    			type: 'photo',
+	    			ownerName: 'Fill Murray',
+	    			message: 'How to Get Inspired: the Right Way - Designmodo <a target="_blank" href="http://bit.ly/1lE4uJc">bit.ly/1lE4uJc</a> Good stuff from <a target="_blank" href="http://designmodo.com">@designmodo</a>',
+	    			media: 'http://lorempixel.com/575/390/',
+	    			responses: []
+	    		},
+	    	]
 		};
 	},
 
 	componentDidMount: function () {
+		// Focus the messagebox on render
 		React.findDOMNode(this.refs.newPost).focus();
 	},
 
@@ -34,8 +71,14 @@ var Home = React.createClass({
 	},
 
 	handleDisplayOptionClick: function(evt) {
+		var displayOption = evt.target.getAttribute('data-option');
+
+		if (!displayOption) {
+			return;
+		}
+
 		this.setState({
-			activeDisplayOption: evt.target.getAttribute('data-option')
+			activeDisplayOption: displayOption
 		});
 
 		// Update the display option filter
@@ -51,33 +94,37 @@ var Home = React.createClass({
 		});
 
 		return (
-			<section className="hero">
-				<div className="container">
-					<div className="new-message-box">
-						<input ref="newPost" placeholder="What's on your mind?"></input>
+			<div>
+				<section className="hero">
+					<div className="container">
+						<div className="new-message-box">
+							<input ref="newPost" placeholder="What's on your mind?"></input>
 
-						<div className="actions">
-							<a href="#">
-								<span className="icon add-photo"></span>
-								<span className="label">Add Photo</span>
-							</a>
-							<a href="#">
-								<span className="icon add-video"></span>
-								<span className="label">Add Video</span>
-							</a>
+							<div className="actions">
+								<a href="#">
+									<span className="icon add-photo"></span>
+									<span className="label">Add Photo</span>
+								</a>
+								<a href="#">
+									<span className="icon add-video"></span>
+									<span className="label">Add Video</span>
+								</a>
+							</div>
 						</div>
 					</div>
-				</div>
 
-				<div className="subnav">
-					{subnavItems}
+					<div className="subnav">
+						{subnavItems}
 
-					<div onClick={this.handleDisplayOptionClick} className="display-options">
-						<div data-option="list" className={'icon list ' + ((this.state.activeDisplayOption === 'list') ? 'active' : '')}></div>
-						<div data-option="tile" className={'icon tile ' + ((this.state.activeDisplayOption === 'tile') ? 'active' : '')}></div>
+						<div onClick={this.handleDisplayOptionClick} className="display-options">
+							<div data-option="list" className={'icon list ' + ((this.state.activeDisplayOption === 'list') ? 'active' : '')}></div>
+							<div data-option="tile" className={'icon tile ' + ((this.state.activeDisplayOption === 'tile') ? 'active' : '')}></div>
+						</div>
 					</div>
-				</div>
-			</section>
+				</section>
+
+				<Posts postItems={this.state.postItems} postFilter={this.state.activeSubnavItem}/>
+			</div>
 		);
 	}
 });
