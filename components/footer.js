@@ -8,10 +8,10 @@ var Footer = React.createClass({
 		return (
 			<footer>
 				<ul>
-					<li><a href="#">About Us</a></li>
-					<li><a href="#">Support</a></li>
-					<li><a href="#">Privacy</a></li>
-					<li><a href="#">Terms</a></li>
+					<li><a href="about">About Us</a></li>
+					<li><a href="support">Support</a></li>
+					<li><a href="privacy">Privacy</a></li>
+					<li><a href="terms">Terms</a></li>
 					<li>&copy; 2014 SimplySocial</li>
 				</ul>
 			</footer>

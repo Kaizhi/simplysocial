@@ -1,0 +1,177 @@
+/* animated toggles*/
+.toggle {
+    position: relative;
+    width: 49px;
+    cursor: pointer;
+    -webkit-user-select:none;
+    -moz-user-select:none;
+    -ms-user-select: none;
+
+    .toggle-checkbox {
+        display: none;
+    }
+    .toggle-label {
+        display: block;
+        overflow: hidden;
+        cursor: pointer;
+        height: 23px;
+        padding: 0;
+        line-height: 23px;
+        border: 2px solid $iconColor; border-radius: 23px;
+        background-color: $iconColor;
+        transition: background-color 0.3s ease-in, border-color .3s ease-in;
+    }
+    .toggle-label:before {
+        content: "";
+        display: block;
+        width: 20px;
+        margin: 0px;
+        background: white;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 25px;
+        border: 2px solid $iconColor;
+        border-radius: 23px;
+        transition: all 0.3s ease-in 0s;
+    }
+    .toggle-checkbox:checked + .toggle-label {
+        background-color: $secondaryLinkColor;
+    }
+    .toggle-checkbox:checked + .toggle-label, .toggle-checkbox:checked + .toggle-label:before {
+       border-color: $secondaryLinkColor;
+    }
+    .toggle-checkbox:checked + .toggle-label:before {
+        right: 0px;
+    }
+}
+
+/* custom checkbox */
+
+
+.settings {
+	width: 100%;
+	max-width: $mainContentWidth;
+	margin: 0 auto;
+	padding-top: 50px;
+
+	h1 {
+		margin: 0;
+		font-weight: lighter;
+	}
+
+	section {
+		margin-top: 50px;
+		border-bottom: 1px solid $dropdownDividerColor;
+		padding-bottom: 50px;
+		overflow: auto;
+
+		h4 {
+			font-weight: normal;
+			text-transform: uppercase;
+			font-size: 13px;
+			margin: 0 0 30px 0;
+			color: $dropdownTextColor;
+		}
+
+		aside {
+			float: left;
+			width: 23%;
+			min-width: 100px;
+
+			.avatar {
+				background-image: url('../img/avatar-large.jpg');
+				width: 86px;
+				height: 86px;
+				border-radius: 5px;
+				background-position-x: -5px;
+			}
+
+			button {
+				background-color: white;
+			    outline: 0;
+			    box-shadow: none;
+			    border: 0;
+			    border: 1px solid $iconColor;
+			    color: $iconColor;
+			    border-radius: 3px;
+			    width: 86px;
+			    margin-top: 10px;
+			    font-size: 14px;
+			    text-transform: lowercase;
+			}
+		}
+
+		.edit-account {
+			float: left;
+			width: 77%;
+
+			input {
+				width: 100%;
+				max-width: 368px;
+				border-radius: 3px;
+				border: 1px solid $iconColor;
+				padding: 10px 10px 10px 40px;
+				height: 40px;
+				line-height: 20px;
+				margin-bottom: 20px;
+				position: relative;
+
+				&:focus {
+					outline: none;
+					border: 1px solid $secondaryLinkColor;
+					color: $secondaryLinkColor;
+				}
+			}
+
+			> div {
+				position: relative;
+			}
+
+			.icon {
+				z-index: 1;
+				left: 10px;
+				position: absolute;
+
+				&.password {
+					top: 8px;
+					opacity: 0.5;
+					@include sprite($lock);
+				}
+
+				&.email {
+					top: 12px;
+					@include sprite($email);
+				}
+
+				&.user {
+					top: 10px;
+					@include sprite($user);
+				}
+			}
+
+		}
+
+		.row {
+			clear: both;
+			overflow: auto;
+			margin-bottom: 20px;
+
+			.toggle {
+				float: left;
+				margin-right: 25px;
+			}
+
+			p {
+				margin: 0;
+				float: left;
+			}
+		}
+	} /* end section*/
+}
+
+@media only screen and (max-width: 767px) {
+	.settings section .edit-account {
+		width: 65%;
+	}
+}
