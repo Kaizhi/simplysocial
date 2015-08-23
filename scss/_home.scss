@@ -66,7 +66,8 @@ $mainContentWidth: 575px;
 
 	/* Subnav */
 	.subnav {
-		width: $mainContentWidth;
+		max-width: $mainContentWidth;
+		width: 100%;
 		margin: 0 auto;
 		position: relative;
 		top: 89px;
@@ -116,5 +117,15 @@ $mainContentWidth: 575px;
 				@include sprite($tile-active, inline-block);
 			}
 		}
+	}
+}
+
+@media only screen and (max-width: 767px) {
+	.hero .subnav .display-options {
+		display: none;
+	}
+
+	.hero .subnav {
+		text-align: center;
 	}
 }

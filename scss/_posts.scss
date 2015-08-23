@@ -8,6 +8,7 @@ $trayContentWidth: 1175px;
 
 	&.list {
 		max-width: $mainContentWidth;
+		padding: 50px $postPadding 0 $postPadding;
 		margin: 0 auto;
 	}
 
@@ -97,4 +98,51 @@ $trayContentWidth: 1175px;
 			display: block;
 		}
 	}
+}
+
+@media only screen and (min-width: 1240px) {
+	/* 1080p tv, bigger desktop */
+	.posts.tile .column {
+		width: 33.33%;
+	}
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1080px) {
+    /* tablets and smaller desktop */
+    .posts.tile {
+    	padding-left: $postPadding;
+    	padding-right: $postPadding;
+
+    	.column {
+    		width: 50%;
+    	}
+
+    	.post {
+    		max-width: 100%;
+    	}
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    /* phones */
+    .posts.tile {
+    	.column {
+    		width: 100%;
+    		padding: 0 $postPadding;
+
+    		&:last-of-type {
+    			padding: 0 $postPadding;
+
+    		}
+    	}
+
+    	.post {
+    		max-width: 100%;
+
+    		.post-media img {
+    			width: 100%;
+    			height: 100%;
+    		}
+    	}
+    }
 }
