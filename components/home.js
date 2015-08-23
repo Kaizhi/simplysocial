@@ -8,9 +8,9 @@ var Home = React.createClass({
 	getDefaultProps: function () {
 		return {
 			subnavItems: [
-				{name: 'all posts'},
-				{name: 'photos'},
-				{name: 'videos'}
+				{ name: 'all posts'},
+				{ name: 'photos'},
+				{ name: 'videos'}
 			]
 		};
 	},
@@ -19,7 +19,7 @@ var Home = React.createClass({
 		return {
 	    	activeSubnavItem: 'all posts',
 	    	activeDisplayOption: 'list',
-	    	postItems: [
+	    	postItems: [ // Mock data - normally we'd get this sanitized from API
 	    		{
 	    			type: 'text',
 	    			ownerName: 'Fill Murray',
@@ -66,8 +66,6 @@ var Home = React.createClass({
 		this.setState({
 			activeSubnavItem: newActiveItem
 		});
-
-		// Update the content type filter here
 	},
 
 	handleDisplayOptionClick: function(evt) {
@@ -80,8 +78,6 @@ var Home = React.createClass({
 		this.setState({
 			activeDisplayOption: displayOption
 		});
-
-		// Update the display option filter
 	},
 
 	render: function() {
@@ -96,20 +92,18 @@ var Home = React.createClass({
 		return (
 			<div>
 				<section className="hero">
-					<div className="container">
-						<div className="new-message-box">
-							<input ref="newPost" placeholder="What's on your mind?"></input>
+					<div className="new-message-box">
+						<input ref="newPost" placeholder="What's on your mind?"></input>
 
-							<div className="actions">
-								<a href="#">
-									<span className="icon add-photo"></span>
-									<span className="label">Add Photo</span>
-								</a>
-								<a href="#">
-									<span className="icon add-video"></span>
-									<span className="label">Add Video</span>
-								</a>
-							</div>
+						<div className="actions">
+							<a href="#">
+								<span className="icon add-photo"></span>
+								<span className="label">Add Photo</span>
+							</a>
+							<a href="#">
+								<span className="icon add-video"></span>
+								<span className="label">Add Video</span>
+							</a>
 						</div>
 					</div>
 
@@ -123,7 +117,7 @@ var Home = React.createClass({
 					</div>
 				</section>
 
-				<Posts postItems={this.state.postItems} postFilter={this.state.activeSubnavItem}/>
+				<Posts postItems={this.state.postItems} displayOption={this.state.activeDisplayOption} postFilter={this.state.activeSubnavItem}/>
 			</div>
 		);
 	}

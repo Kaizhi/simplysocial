@@ -47,6 +47,7 @@ header {
 
 			&:focus {
 				border: 1px solid $secondaryLinkColor;
+				outline: 0;
 			}
 		}
 	}
@@ -79,9 +80,11 @@ header {
 			border-radius: 3px;
 			position: absolute;
 			top: 40px;
-			left: -27px;
+			left: -33px;
 			display: none;
 			z-index: 1;
+			margin: 0;
+			padding: 0;
 
 			&::before {
 				content: '';

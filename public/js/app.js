@@ -113,9 +113,9 @@ var Home = React.createClass({
 	getDefaultProps: function () {
 		return {
 			subnavItems: [
-				{name: 'all posts'},
-				{name: 'photos'},
-				{name: 'videos'}
+				{ name: 'all posts'},
+				{ name: 'photos'},
+				{ name: 'videos'}
 			]
 		};
 	},
@@ -124,7 +124,7 @@ var Home = React.createClass({
 		return {
 	    	activeSubnavItem: 'all posts',
 	    	activeDisplayOption: 'list',
-	    	postItems: [
+	    	postItems: [ // Mock data - normally we'd get this sanitized from API
 	    		{
 	    			type: 'text',
 	    			ownerName: 'Fill Murray',
@@ -171,8 +171,6 @@ var Home = React.createClass({
 		this.setState({
 			activeSubnavItem: newActiveItem
 		});
-
-		// Update the content type filter here
 	},
 
 	handleDisplayOptionClick: function(evt) {
@@ -185,8 +183,6 @@ var Home = React.createClass({
 		this.setState({
 			activeDisplayOption: displayOption
 		});
-
-		// Update the display option filter
 	},
 
 	render: function() {
@@ -201,19 +197,17 @@ var Home = React.createClass({
 		return (
 			React.createElement("div", null, 
 				React.createElement("section", {className: "hero"}, 
-					React.createElement("div", {className: "container"}, 
-						React.createElement("div", {className: "new-message-box"}, 
-							React.createElement("input", {ref: "newPost", placeholder: "What's on your mind?"}), 
+					React.createElement("div", {className: "new-message-box"}, 
+						React.createElement("input", {ref: "newPost", placeholder: "What's on your mind?"}), 
 
-							React.createElement("div", {className: "actions"}, 
-								React.createElement("a", {href: "#"}, 
-									React.createElement("span", {className: "icon add-photo"}), 
-									React.createElement("span", {className: "label"}, "Add Photo")
-								), 
-								React.createElement("a", {href: "#"}, 
-									React.createElement("span", {className: "icon add-video"}), 
-									React.createElement("span", {className: "label"}, "Add Video")
-								)
+						React.createElement("div", {className: "actions"}, 
+							React.createElement("a", {href: "#"}, 
+								React.createElement("span", {className: "icon add-photo"}), 
+								React.createElement("span", {className: "label"}, "Add Photo")
+							), 
+							React.createElement("a", {href: "#"}, 
+								React.createElement("span", {className: "icon add-video"}), 
+								React.createElement("span", {className: "label"}, "Add Video")
 							)
 						)
 					), 
@@ -228,7 +222,7 @@ var Home = React.createClass({
 					)
 				), 
 
-				React.createElement(Posts, {postItems: this.state.postItems, postFilter: this.state.activeSubnavItem})
+				React.createElement(Posts, {postItems: this.state.postItems, displayOption: this.state.activeDisplayOption, postFilter: this.state.activeSubnavItem})
 			)
 		);
 	}
@@ -281,7 +275,10 @@ var Posts = React.createClass({
 	displayName: 'Posts',
 
 	render: function() {
-		var component = this;
+		var component = this,
+			columns = [[], [], []],
+			columnCounter = 0,
+			postDOM;
 
 		var postItems = this.props.postItems.filter(function(item) {
 			if (component.props.postFilter === "all posts") {
@@ -297,9 +294,37 @@ var Posts = React.createClass({
 			);
 		});
 
+		for (var i=0; i<postItems.length; i++) {
+			if (columnCounter === 3){
+				columnCounter = 0;
+			}
+			columns[columnCounter].push(postItems[i]);
+			columnCounter++;
+		}
+
+		if (this.props.displayOption === 'list'){
+
+			postDOM = postItems;
+
+		} else {
+			postDOM = (
+				React.createElement("div", null, 
+					React.createElement("div", {className: "column"}, 
+						columns[0]
+					), 
+					React.createElement("div", {className: "column"}, 
+						columns[1]
+					), 
+					React.createElement("div", {className: "column"}, 
+						columns[2]
+					)
+				)
+			);
+		}
+
 		return (
-			React.createElement("section", {className: "posts list"}, 
-				postItems
+			React.createElement("section", {className: 'posts ' + this.props.displayOption}, 
+				postDOM
 			)
 		);
 	}

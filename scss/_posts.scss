@@ -1,13 +1,35 @@
 $postPadding: 25px;
+$trayContentWidth: 1175px;
 
 .posts {
 	height: auto;
+	width: 100%;
 	padding-top: 50px;
 
 	&.list {
 		max-width: $mainContentWidth;
-		width: 100%;
 		margin: 0 auto;
+	}
+
+	&.tile {
+		max-width: $trayContentWidth;
+		margin: 0 auto;
+
+		.column {
+			width: 33.33%;
+			padding-right: 27px;
+			float: left;
+
+			&:last-of-type {
+				padding-right: 0px;
+			}
+		}
+
+		.post {
+			max-width: 375px;
+			float: left;
+			display: inline-block;
+		}
 	}
 
 	.post {
