@@ -41,6 +41,20 @@ var Home = React.createClass({
 	    			responses: []
 	    		},
 	    		{
+	    			type: 'photo',
+	    			ownerName: 'Fill Murray',
+	    			message: 'How to Get Inspired: the Right Way - Designmodo <a target="_blank" href="http://bit.ly/1lE4uJc">bit.ly/1lE4uJc</a> Good stuff from <a target="_blank" href="http://designmodo.com">@designmodo</a>',
+	    			media: 'http://lorempixel.com/575/390/',
+	    			responses: []
+	    		},
+	    		{
+	    			type: 'video',
+	    			ownerName: 'Fill Murray',
+	    			message: 'My view this morning is simply beautiful! Check out this video',
+	    			media: 'http://lorempixel.com/575/390/',
+	    			responses: []
+	    		},
+	    		{
 	    			type: 'text',
 	    			ownerName: 'Meg Robichaud',
 	    			message: 'How to Get Inspired: the Right Way - Designmodo <a target="_blank" href="http://bit.ly/1lE4uJc">bit.ly/1lE4uJc</a> Good stuff from <a target="_blank" href="http://designmodo.com">@designmodo</a>',
@@ -51,6 +65,18 @@ var Home = React.createClass({
 	    			ownerName: 'Fill Murray',
 	    			message: 'How to Get Inspired: the Right Way - Designmodo <a target="_blank" href="http://bit.ly/1lE4uJc">bit.ly/1lE4uJc</a> Good stuff from <a target="_blank" href="http://designmodo.com">@designmodo</a>',
 	    			media: 'http://lorempixel.com/575/390/',
+	    			responses: []
+	    		},
+	    		{
+	    			type: 'text',
+	    			ownerName: 'Angela F',
+	    			message: 'How to Get Inspired: the Right Way - Designmodo <a target="_blank" href="http://bit.ly/1lE4uJc">bit.ly/1lE4uJc</a> Good stuff from <a target="_blank" href="http://designmodo.com">@designmodo</a>',
+	    			responses: []
+	    		},
+	    		{
+	    			type: 'text',
+	    			ownerName: 'Larry Murray',
+	    			message: 'How to Get Inspired: the Right Way - Designmodo <a target="_blank" href="http://bit.ly/1lE4uJc">bit.ly/1lE4uJc</a> Good stuff from <a target="_blank" href="http://designmodo.com">@designmodo</a>',
 	    			responses: []
 	    		},
 	    	]

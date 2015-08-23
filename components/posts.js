@@ -33,7 +33,6 @@ var Posts = React.createClass({
 		var component = this,
 			columns = [[], [], []],
 			columnCounter = 0,
-			postDOM,
 			postItems,
 			maxColumnCount = 3;
 
@@ -55,9 +54,7 @@ var Posts = React.createClass({
 			);
 		});
 
-		if (this.props.displayOption === 'list'){
-			postDOM = postItems;
-		} else {
+		if (this.props.displayOption !== 'list'){
 
 			for (var i=0; i<postItems.length; i++) {
 
@@ -68,7 +65,7 @@ var Posts = React.createClass({
 				columnCounter++;
 			}
 
-			postDOM = columns.map(function (item, index) {
+			postItems = columns.map(function (item, index) {
 				return (
 					<div className="column">
 						{columns[index]}
@@ -79,7 +76,7 @@ var Posts = React.createClass({
 
 		return (
 			<section className={'posts ' + this.props.displayOption}>
-				{postDOM}
+				{postItems}
 			</section>
 		);
 	}

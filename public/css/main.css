@@ -370,7 +370,8 @@ header {
     cursor: pointer; }
   header .search {
     position: relative;
-    width: 200px;
+    max-width: 200px;
+    width: 100%;
     height: 30px;
     margin-right: 24px;
     float: left; }
@@ -386,7 +387,7 @@ header {
       position: absolute;
       opacity: 0.4; }
     header .search input {
-      width: 200px;
+      width: 100%;
       height: 30px;
       background-color: #262728;
       border: 1px solid #44474b;
@@ -449,6 +450,12 @@ header {
           color: #70767f; }
       header .avatar .dropdown.active {
         display: block; }
+
+@media only screen and (max-width: 767px) {
+  header .logo {
+    width: 30px; }
+  header .search, header .search input {
+    max-width: 150px; } }
 
 .hero {
   height: 425px;

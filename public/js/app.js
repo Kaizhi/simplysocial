@@ -146,6 +146,20 @@ var Home = React.createClass({
 	    			responses: []
 	    		},
 	    		{
+	    			type: 'photo',
+	    			ownerName: 'Fill Murray',
+	    			message: 'How to Get Inspired: the Right Way - Designmodo <a target="_blank" href="http://bit.ly/1lE4uJc">bit.ly/1lE4uJc</a> Good stuff from <a target="_blank" href="http://designmodo.com">@designmodo</a>',
+	    			media: 'http://lorempixel.com/575/390/',
+	    			responses: []
+	    		},
+	    		{
+	    			type: 'video',
+	    			ownerName: 'Fill Murray',
+	    			message: 'My view this morning is simply beautiful! Check out this video',
+	    			media: 'http://lorempixel.com/575/390/',
+	    			responses: []
+	    		},
+	    		{
 	    			type: 'text',
 	    			ownerName: 'Meg Robichaud',
 	    			message: 'How to Get Inspired: the Right Way - Designmodo <a target="_blank" href="http://bit.ly/1lE4uJc">bit.ly/1lE4uJc</a> Good stuff from <a target="_blank" href="http://designmodo.com">@designmodo</a>',
@@ -156,6 +170,18 @@ var Home = React.createClass({
 	    			ownerName: 'Fill Murray',
 	    			message: 'How to Get Inspired: the Right Way - Designmodo <a target="_blank" href="http://bit.ly/1lE4uJc">bit.ly/1lE4uJc</a> Good stuff from <a target="_blank" href="http://designmodo.com">@designmodo</a>',
 	    			media: 'http://lorempixel.com/575/390/',
+	    			responses: []
+	    		},
+	    		{
+	    			type: 'text',
+	    			ownerName: 'Angela F',
+	    			message: 'How to Get Inspired: the Right Way - Designmodo <a target="_blank" href="http://bit.ly/1lE4uJc">bit.ly/1lE4uJc</a> Good stuff from <a target="_blank" href="http://designmodo.com">@designmodo</a>',
+	    			responses: []
+	    		},
+	    		{
+	    			type: 'text',
+	    			ownerName: 'Larry Murray',
+	    			message: 'How to Get Inspired: the Right Way - Designmodo <a target="_blank" href="http://bit.ly/1lE4uJc">bit.ly/1lE4uJc</a> Good stuff from <a target="_blank" href="http://designmodo.com">@designmodo</a>',
 	    			responses: []
 	    		},
 	    	]
@@ -303,7 +329,6 @@ var Posts = React.createClass({
 		var component = this,
 			columns = [[], [], []],
 			columnCounter = 0,
-			postDOM,
 			postItems,
 			maxColumnCount = 3;
 
@@ -325,9 +350,7 @@ var Posts = React.createClass({
 			);
 		});
 
-		if (this.props.displayOption === 'list'){
-			postDOM = postItems;
-		} else {
+		if (this.props.displayOption !== 'list'){
 
 			for (var i=0; i<postItems.length; i++) {
 
@@ -338,7 +361,7 @@ var Posts = React.createClass({
 				columnCounter++;
 			}
 
-			postDOM = columns.map(function (item, index) {
+			postItems = columns.map(function (item, index) {
 				return (
 					React.createElement("div", {className: "column"}, 
 						columns[index]
@@ -349,7 +372,7 @@ var Posts = React.createClass({
 
 		return (
 			React.createElement("section", {className: 'posts ' + this.props.displayOption}, 
-				postDOM
+				postItems
 			)
 		);
 	}
