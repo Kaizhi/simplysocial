@@ -10,7 +10,7 @@ var MessageModal = React.createClass({
 
 	render: function() {
 		return (
-			<div className={'overlay ' + (this.props.active ? 'active' : '')}>
+			<div onClick={this.onCloseClick} className={'overlay ' + (this.props.active ? 'active' : '')}>
 				<div className="modal">
 					<div onClick={this.onCloseClick} className="icon close"></div>
 					<h4>Create new message</h4>

@@ -77,19 +77,19 @@ var AccountSettings = React.createClass({
 				React.createElement("div", {className: "edit-account"}, 
 					React.createElement("div", null, 
 						React.createElement("span", {className: "icon user"}), 
-						React.createElement("input", {name: "username", type: "text", value: "Jessica Tuan"})
+						React.createElement("input", {name: "username", type: "text", defaultValue: "Jessica Tuan"})
 					), 
 					React.createElement("div", null, 
 						React.createElement("span", {className: "icon email"}), 
-						React.createElement("input", {name: "email", type: "email", value: "jessica@mail.com"})
+						React.createElement("input", {name: "email", type: "email", defaultValue: "jessica@mail.com"})
 					), 
 					React.createElement("div", null, 
 						React.createElement("span", {className: "icon password"}), 
-						React.createElement("input", {name: "password", type: "password", value: "placeholder"})
+						React.createElement("input", {name: "password", type: "password", defaultValue: "placeholder"})
 					), 
 					React.createElement("div", null, 
 						React.createElement("span", {className: "icon password"}), 
-						React.createElement("input", {name: "password_confirm", type: "password", value: "placeholder"})
+						React.createElement("input", {name: "password_confirm", type: "password", defaultValue: "placeholder"})
 					)
 
 				)
@@ -430,7 +430,7 @@ var MessageModal = React.createClass({
 
 	render: function() {
 		return (
-			React.createElement("div", {className: 'overlay ' + (this.props.active ? 'active' : '')}, 
+			React.createElement("div", {onClick: this.onCloseClick, className: 'overlay ' + (this.props.active ? 'active' : '')}, 
 				React.createElement("div", {className: "modal"}, 
 					React.createElement("div", {onClick: this.onCloseClick, className: "icon close"}), 
 					React.createElement("h4", null, "Create new message"), 

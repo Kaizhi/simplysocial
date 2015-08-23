@@ -13,19 +13,19 @@ var AccountSettings = React.createClass({
 				<div className="edit-account">
 					<div>
 						<span className="icon user"></span>
-						<input name="username" type="text" value="Jessica Tuan"/>
+						<input name="username" type="text" defaultValue="Jessica Tuan"/>
 					</div>
 					<div>
 						<span className="icon email"></span>
-						<input name="email" type="email" value="jessica@mail.com"/>
+						<input name="email" type="email" defaultValue="jessica@mail.com"/>
 					</div>
 					<div>
 						<span className="icon password"></span>
-						<input name="password" type="password" value="placeholder"/>
+						<input name="password" type="password" defaultValue="placeholder"/>
 					</div>
 					<div>
 						<span className="icon password"></span>
-						<input name="password_confirm" type="password" value="placeholder"/>
+						<input name="password_confirm" type="password" defaultValue="placeholder"/>
 					</div>
 
 				</div>

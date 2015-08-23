@@ -7,21 +7,21 @@
 	background-color: rgba(0,0,0,0.8);
 	z-index: 5;
 	display: none;
+	justify-content: center;
 
 	&.active {
-		display: block;
+		display: flex;
 	}
 
 	.modal {
-		width: $mainContentWidth;
+		max-width: $mainContentWidth;
+		width: 80%;
 		height: 215px;
-		position: absolute;
 		background-color: $dropdownDividerColor;
 		border-radius: 3px;
 		top: 180px;
-		left: 50%;
-		margin-left: -287.5px;
 		padding: 25px 28px 18px 28px;
+		position: relative;
 
 		h4 {
 			margin: 0;
@@ -92,6 +92,18 @@
 			top: -25px;
 			right: -30px;
 			cursor: pointer;
+		}
+	}
+}
+
+@media only screen and (max-width: 767px) {
+	.overlay .modal .actions {
+		a {
+			margin-right: 20px;
+		}
+
+		.label {
+			display: none;
 		}
 	}
 }
