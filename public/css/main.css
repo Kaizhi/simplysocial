@@ -700,11 +700,17 @@ there.
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
   .icon {
     background-image: url("../img/sprite@2x.png");
-    background-size: 141px 121px; } }
+    background-size: 141px 173px; } }
 
 * {
   font-family: 'Open Sans', sans-serif;
   box-sizing: border-box; }
+
+a {
+  color: white;
+  text-decoration: none; }
+  a:hover {
+    color: white; }
 
 body {
   background-color: white;
@@ -722,7 +728,7 @@ header {
   header .nav-items {
     float: right; }
   header .logo {
-    background-position: 0px -62px;
+    background-position: 0px -114px;
     background-repeat: no-repeat;
     overflow: hidden;
     display: block;
@@ -730,7 +736,7 @@ header {
     height: 29px;
     float: left; }
   header .new-message {
-    background-position: 0px -91px;
+    background-position: 0px -143px;
     background-repeat: no-repeat;
     overflow: hidden;
     display: block;
@@ -746,7 +752,7 @@ header {
     margin-right: 24px;
     float: left; }
     header .search .search-icon {
-      background-position: 0px -42px;
+      background-position: 0px -94px;
       background-repeat: no-repeat;
       overflow: hidden;
       display: block;
@@ -822,7 +828,8 @@ header {
   height: 425px;
   background-image: url('../img/hero.jpg');
   background-size: cover;
-  padding-top: 135px; }
+  padding-top: 135px;
+  /* Subnav */ }
   .hero .new-message-box {
     width: 100%;
     max-width: 575px;
@@ -868,7 +875,7 @@ header {
         .hero .new-message-box .actions a:last-of-type {
           margin-right: 0px; }
       .hero .new-message-box .actions .add-photo {
-        background-position: 0px -8px;
+        background-position: 0px -60px;
         background-repeat: no-repeat;
         overflow: hidden;
         display: inline-block;
@@ -876,7 +883,7 @@ header {
         height: 17px;
         margin-right: 10px; }
       .hero .new-message-box .actions .add-video {
-        background-position: 0px -25px;
+        background-position: 0px -77px;
         background-repeat: no-repeat;
         overflow: hidden;
         display: inline-block;
@@ -885,3 +892,54 @@ header {
         margin-right: 10px; }
       .hero .new-message-box .actions .label {
         vertical-align: text-bottom; }
+  .hero .subnav {
+    width: 575px;
+    margin: 0 auto;
+    position: relative;
+    top: 89px; }
+    .hero .subnav a {
+      margin-right: 40px;
+      padding: 0 10px 20px;
+      color: #bec3cc;
+      text-transform: uppercase;
+      font-size: 12px; }
+      .hero .subnav a.active {
+        border-bottom: 4px solid #00cc99;
+        color: white; }
+      .hero .subnav a:hover {
+        color: white; }
+    .hero .subnav .display-options {
+      float: right; }
+      .hero .subnav .display-options > div {
+        margin-right: 20px;
+        cursor: pointer; }
+        .hero .subnav .display-options > div:last-of-type {
+          margin-right: 0px; }
+    .hero .subnav .list {
+      background-position: 0px -21px;
+      background-repeat: no-repeat;
+      overflow: hidden;
+      display: inline-block;
+      width: 13px;
+      height: 13px; }
+      .hero .subnav .list.active, .hero .subnav .list:hover {
+        background-position: 0px -8px;
+        background-repeat: no-repeat;
+        overflow: hidden;
+        display: inline-block;
+        width: 13px;
+        height: 13px; }
+    .hero .subnav .tile {
+      background-position: 0px -47px;
+      background-repeat: no-repeat;
+      overflow: hidden;
+      display: inline-block;
+      width: 13px;
+      height: 13px; }
+      .hero .subnav .tile.active, .hero .subnav .tile:hover {
+        background-position: 0px -34px;
+        background-repeat: no-repeat;
+        overflow: hidden;
+        display: inline-block;
+        width: 13px;
+        height: 13px; }

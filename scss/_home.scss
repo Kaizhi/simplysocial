@@ -1,3 +1,4 @@
+$mainContentWidth: 575px;
 
 .hero {
 	height: 425px;
@@ -7,7 +8,7 @@
 
 	.new-message-box {
 		width: 100%;
-		max-width: 575px;
+		max-width: $mainContentWidth;
 		height: 155px;
 		margin: 0 auto;
 		background-color: rgba(0, 204, 153, 0.7);
@@ -58,6 +59,60 @@
 
 			.label {
 				vertical-align: text-bottom;
+			}
+		}
+	}
+
+	/* Subnav */
+	.subnav {
+		width: $mainContentWidth;
+		margin: 0 auto;
+		position: relative;
+		top: 89px;
+
+		a {
+			margin-right: 40px;
+			padding: 0 10px 20px;
+			color: $iconColor;
+			text-transform: uppercase;
+			font-size: 12px;
+
+			&.active {
+				border-bottom: 4px solid $secondaryLinkColor;
+				color: white;
+			}
+
+			&:hover {
+				color: white;
+			}
+		}
+
+		.display-options {
+			float: right;
+
+			> div {
+				margin-right: 20px;
+				cursor: pointer;
+
+				&:last-of-type {
+					margin-right: 0px;
+				}
+			}
+		}
+
+		.list {
+			@include sprite($list-inactive, inline-block);
+
+			&.active, &:hover {
+				@include sprite($list-active, inline-block);
+			}
+		}
+
+		.tile {
+			@include sprite($tile-inactive, inline-block);
+
+			&.active, &:hover {
+				@include sprite($tile-active, inline-block);
 			}
 		}
 	}

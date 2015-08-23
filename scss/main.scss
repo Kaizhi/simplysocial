@@ -9,6 +9,15 @@
  	box-sizing: border-box;
 }
 
+a {
+	color: white;
+	text-decoration: none;
+
+	&:hover {
+		color: white;
+	}
+}
+
 body {
 	background-color: white;
 	color: $bodyTextColor;
