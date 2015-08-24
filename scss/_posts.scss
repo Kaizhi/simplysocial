@@ -47,7 +47,7 @@ $trayContentWidth: 1175px;
 		border-radius: 3px;
 		border: 1px solid $dropdownDividerColor;
 		margin-bottom: $postPadding;
-		overflow-y: hidden;
+		overflow: hidden;
 
 		.post-content {
 			padding: $postPadding;

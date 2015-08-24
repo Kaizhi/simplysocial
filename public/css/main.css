@@ -698,7 +698,7 @@ header {
     border-radius: 3px;
     border: 1px solid #dee1e5;
     margin-bottom: 25px;
-    overflow-y: hidden; }
+    overflow: hidden; }
     .posts .post .post-content {
       padding: 25px;
       position: relative; }
