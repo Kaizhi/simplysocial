@@ -575,7 +575,6 @@ header {
       bottom: 30px;
       height: 20px; }
       .hero .new-message-box .actions a {
-        margin-right: 45px;
         color: rgba(255, 255, 255, 0.7);
         text-decoration: none; }
         .hero .new-message-box .actions a:hover {
@@ -604,7 +603,9 @@ header {
         margin-top: 2px;
         margin-right: 10px; }
       .hero .new-message-box .actions .label {
-        vertical-align: text-bottom; }
+        vertical-align: text-bottom;
+        margin-right: 45px;
+        float: left; }
   .hero .subnav {
     max-width: 575px;
     width: 100%;
