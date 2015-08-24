@@ -935,16 +935,9 @@ footer {
   bottom: 0;
   background-color: rgba(0, 0, 0, 0.8);
   z-index: 5;
-  display: none;
-  -webkit-justify-content: center;
-      -ms-flex-pack: center;
-          -webkit-box-pack: center;
-          justify-content: center; }
+  display: none; }
   .overlay.active {
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: -webkit-box;
-    display: flex; }
+    display: block; }
   .overlay .modal {
     max-width: 575px;
     width: 80%;
@@ -953,7 +946,8 @@ footer {
     border-radius: 3px;
     top: 180px;
     padding: 25px 28px 18px 28px;
-    position: relative; }
+    position: relative;
+    margin: 0 auto; }
     .overlay .modal h4 {
       margin: 0;
       color: #70767f;
