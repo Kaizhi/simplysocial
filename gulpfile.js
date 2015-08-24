@@ -6,7 +6,11 @@ var autoprefixer = require('gulp-autoprefixer');
 var sprity = require('sprity');
 var browserify = require('browserify');
 var source = require("vinyl-source-stream");
+var buffer = require('vinyl-buffer');
 var reactify = require('reactify');
+var autoprefixer = require('gulp-autoprefixer');
+var uglify = require('gulp-uglify');
+var minifyCss = require('gulp-minify-css');
 
 var sourcePaths = {
   styles: ['scss/**/*.scss'],
@@ -36,7 +40,7 @@ gulp.task('sprites', function () {
 });
 
 // Compile scss files to css
-gulp.task('sass', function () {
+gulp.task('sass', ['sprites'], function () {
   gulp.src( sourcePaths.styles )
     .pipe(plumber())
     .pipe(sass())
@@ -44,6 +48,7 @@ gulp.task('sass', function () {
       browsers: ['last 2 versions'],
       cascade: true
     }))
+    .pipe(autoprefixer())
     .pipe(gulp.dest( distPaths.styles ));
 });
 
@@ -53,15 +58,31 @@ gulp.task('browserify', function(){
   b.add('components/app.js');
   return b.bundle()
     .pipe(source('app.js'))
+    .pipe(buffer())
+    .pipe(uglify())
     .pipe(gulp.dest('public/js/'));
 });
 
-gulp.task('watch', function() {
+gulp.task('compress', ['browserify'], function() {
+  return gulp.src('public/js/*.js')
+    .pipe(uglify())
+    .pipe(gulp.dest('public/js/'));
+});
+
+gulp.task('minify-css', ['sass'], function() {
+  return gulp.src(distPaths.styles)
+    .pipe(minifyCss({compatibility: 'ie9'}))
+    .pipe(gulp.dest(distPaths.styles));
+});
+
+gulp.task('watch', ['build'], function() {
   gulp.watch(sourcePaths.styles, ['sass']);
   gulp.watch(sourcePaths.react, ['browserify']);
   gulp.watch(sourcePaths.icons, ['sprites']);
 });
 
-gulp.task('build', ['sprites', 'sass', 'browserify']);
+gulp.task('build', ['sass', 'browserify']);
 
-gulp.task('default', ['build', 'watch']);
+gulp.task('default', ['watch']);
+
+gulp.task('prod', ['compress', 'minify-css']);

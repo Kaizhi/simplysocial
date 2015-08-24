@@ -345,7 +345,8 @@ td, th {
     border: 2px solid #bec3cc;
     border-radius: 23px;
     background-color: #bec3cc;
-    transition: background-color .2s ease-in-out, border-color .2s ease-in-out; }
+    -webkit-transition: background-color .2s ease-in-out, border-color .2s ease-in-out;
+            transition: background-color .2s ease-in-out, border-color .2s ease-in-out; }
   .toggle .toggle-label:before {
     content: "";
     display: block;
@@ -358,7 +359,8 @@ td, th {
     right: 25px;
     border: 2px solid #bec3cc;
     border-radius: 23px;
-    transition: all .2s ease-in-out 0s; }
+    -webkit-transition: all .2s ease-in-out 0s;
+            transition: all .2s ease-in-out 0s; }
   .toggle .toggle-checkbox:checked + .toggle-label {
     background-color: #00cc99; }
   .toggle .toggle-checkbox:checked + .toggle-label, .toggle .toggle-checkbox:checked + .toggle-label:before {
@@ -936,10 +938,12 @@ footer {
   display: none;
   -webkit-justify-content: center;
       -ms-flex-pack: center;
+          -webkit-box-pack: center;
           justify-content: center; }
   .overlay.active {
     display: -webkit-flex;
     display: -ms-flexbox;
+    display: -webkit-box;
     display: flex; }
   .overlay .modal {
     max-width: 575px;
