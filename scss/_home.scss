@@ -48,12 +48,16 @@
 				}
 			}
 			.add-photo {
-				@include sprite($photo, inline-block);
+				@include sprite($photo);
+				float: left;
+				margin-top: 2px;
 				margin-right: 10px;
 			}
 
 			.add-video {
-				@include sprite($video, inline-block);
+				@include sprite($video);
+				float: left;
+				margin-top: 2px;
 				margin-right: 10px;
 			}
 

@@ -587,17 +587,21 @@ header {
         background-position: 0px -162px;
         background-repeat: no-repeat;
         overflow: hidden;
-        display: inline-block;
+        display: block;
         width: 22px;
         height: 17px;
+        float: left;
+        margin-top: 2px;
         margin-right: 10px; }
       .hero .new-message-box .actions .add-video {
         background-position: 0px -60px;
         background-repeat: no-repeat;
         overflow: hidden;
-        display: inline-block;
+        display: block;
         width: 22px;
         height: 17px;
+        float: left;
+        margin-top: 2px;
         margin-right: 10px; }
       .hero .new-message-box .actions .label {
         vertical-align: text-bottom; }
