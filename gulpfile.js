@@ -10,7 +10,7 @@ var buffer = require('vinyl-buffer');
 var reactify = require('reactify');
 var autoprefixer = require('gulp-autoprefixer');
 var uglify = require('gulp-uglify');
-var minifyCss = require('gulp-minify-css');
+var cssmin = require('gulp-cssmin');
 
 var sourcePaths = {
   styles: ['scss/**/*.scss'],
@@ -19,7 +19,7 @@ var sourcePaths = {
 };
 
 var distPaths = {
-  styles: 'public/css'
+  styles: 'public/css/'
 };
 
 
@@ -52,6 +52,19 @@ gulp.task('sass', ['sprites'], function () {
     .pipe(gulp.dest( distPaths.styles ));
 });
 
+gulp.task('sass-min', ['sprites'], function () {
+  gulp.src( sourcePaths.styles )
+    .pipe(plumber())
+    .pipe(sass())
+    .pipe(autoprefixer({
+      browsers: ['last 2 versions'],
+      cascade: true
+    }))
+    .pipe(autoprefixer())
+    .pipe(cssmin())
+    .pipe(gulp.dest( distPaths.styles ));
+});
+
 gulp.task('browserify', function(){
   var b = browserify();
   b.transform(reactify); // use the reactify transform
@@ -59,7 +72,6 @@ gulp.task('browserify', function(){
   return b.bundle()
     .pipe(source('app.js'))
     .pipe(buffer())
-    .pipe(uglify())
     .pipe(gulp.dest('public/js/'));
 });
 
@@ -67,12 +79,6 @@ gulp.task('compress', ['browserify'], function() {
   return gulp.src('public/js/*.js')
     .pipe(uglify())
     .pipe(gulp.dest('public/js/'));
-});
-
-gulp.task('minify-css', ['sass'], function() {
-  return gulp.src(distPaths.styles)
-    .pipe(minifyCss({compatibility: 'ie9'}))
-    .pipe(gulp.dest(distPaths.styles));
 });
 
 gulp.task('watch', ['build'], function() {
@@ -85,4 +91,4 @@ gulp.task('build', ['sass', 'browserify']);
 
 gulp.task('default', ['watch']);
 
-gulp.task('prod', ['compress', 'minify-css']);
+gulp.task('prod', ['compress', 'sass-min']);
